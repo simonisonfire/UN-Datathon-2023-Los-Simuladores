@@ -2,6 +2,7 @@
 
 library(sf)
 library(tidyverse)
+library(sp)
 
 #======================================================================================
 # 1er dataframe con paradas de Tranvía
@@ -15,6 +16,31 @@ lat1 <- c(-56.13722, -56.13880, -56.14020, -56.14277, -56.14821, -56.15427, -56.
 
 pt1 <- data.frame(long1, lat1)
 rm(long1, lat1)
+
+# Ajustamos el sistema de coordenadas a UTM
+
+coordinates(pt1) <- c("long1", "lat1")
+proj4string(pt1) <- CRS("+proj=longlat +datum=WGS84 +no_defs")
+
+# Definimos el CRS de destino (UTM)
+crs_utm <- CRS("+proj=utm +zone=21 +south +datum=WGS84 +units=m +no_defs")
+
+# Realizamos la transformación
+
+pt1_utm <- spTransform(pt1, crs_utm)
+
+pt1_sf <- st_as_sf(pt1_utm)
+
+pt1_sf <- st_set_crs(pt1_sf, st_crs(mapita_segmentos))
+
+rm(crs_utm, pt1_utm, pt1)
+
+plot(pt1_sf)
+
+ggplot() + 
+  geom_sf(data = mapita_segmentos, fill = "#e0ecf4") +
+  geom_sf(data = avenidas, color = "#9ebcda", size = 0.005) +
+  geom_sf(data = pt1_sf, color = "#8856a7")
 
 #======================================================================================
 # 2do dataframe con paradas de Tranvía
