@@ -27,11 +27,13 @@ resumen_vehiculos <- resumen_vehiculos %>%
   mutate(hora = as.POSIXct(hora, format = "%H:%M:%S")) %>% 
   mutate(hora = format(hora, format = "%H"))
   
-
+# Creamos la varible semana
 
 resumen_vehiculos <- resumen_vehiculos %>%   
   mutate(fecha = as.Date(fecha)) %>% 
   mutate(semana = format(fecha, "%W"))
+
+# Creamos la variable weekday
 
 resumen_vehiculos <- resumen_vehiculos %>% 
   mutate(weekday = weekdays(fecha))
@@ -63,6 +65,7 @@ ggplot(resumen_vehiculos, aes(x = hora, y = weekday, fill = log(total_volumen)))
   scale_fill_gradient(low = "white", high = "red") +
   labs(title = "Cantidad de Vehículos por Hora y Día de la Semana",
        x = "Hora del Día", y = "Día de la Semana")
+
 ## ===========================================================================
 ## ===========================================================================
 
