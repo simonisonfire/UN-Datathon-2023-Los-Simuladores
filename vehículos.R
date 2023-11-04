@@ -8,25 +8,38 @@ library(sp)
 count_veh <- read.table("Bases/conteo_veh_set23/autoscope_09_2023_volumen.csv", 
                         header = TRUE, sep = ",")
 
+# Seleccionamos las variables relevantes
+
 count_veh <- count_veh %>% 
   select(cod_detector, fecha, hora, latitud, longitud, volume) %>% 
   group_by(cod_detector) %>% 
   reframe(fecha, hora, latitud, longitud, volume) 
 
+# Agregamos el total del volumen de vehículos
+
 resumen_vehiculos <- count_veh %>%
   group_by(cod_detector, hora, fecha, latitud, longitud) %>%
   reframe(total_volumen = sum(volume))
+
+# Arreglamos el formato y agregamos por hora
  
 resumen_vehiculos <- resumen_vehiculos %>%
   mutate(hora = as.POSIXct(hora, format = "%H:%M:%S")) %>% 
   mutate(hora = format(hora, format = "%H"))
   
+
+
 resumen_vehiculos <- resumen_vehiculos %>%   
   mutate(fecha = as.Date(fecha)) %>% 
   mutate(semana = format(fecha, "%W"))
 
 resumen_vehiculos <- resumen_vehiculos %>% 
   mutate(weekday = weekdays(fecha))
+
+rm(count_veh)
+
+## ===========================================================================
+## ===========================================================================
 
 # Creamos un mapa de calor
 
@@ -50,6 +63,8 @@ ggplot(resumen_vehiculos, aes(x = hora, y = weekday, fill = log(total_volumen)))
   scale_fill_gradient(low = "white", high = "red") +
   labs(title = "Cantidad de Vehículos por Hora y Día de la Semana",
        x = "Hora del Día", y = "Día de la Semana")
+## ===========================================================================
+## ===========================================================================
 
 # Ajustamos el sistema de coordenadas a UTM
 
@@ -66,6 +81,10 @@ resumen_vehiculos_sf <- st_as_sf(resumen_vehiculos_utm)
 
 resumen_vehiculos_sf <- st_set_crs(resumen_vehiculos_sf, st_crs(mapita_segmentos))
 
+rm(crs_utm, resumen_vehiculos_utm, resumen_vehiculos)
+
+# Creamos un mapa de burbujas con la cantidad de vehículos
+
 ggplot() + 
   geom_sf(data = mapita_segmentos, fill = "#e0ecf4") +
   geom_sf(data = avenidas, color = "#9ebcda", size = 0.005) +
@@ -79,11 +98,13 @@ st_write(resumen_vehiculos_sf, "Bases/conteo_veh_set23/count_veh.shp")
 
 count_geo <- read_sf("Bases/conteo_veh_set23/count_veh.shp")
 
-# Agrupamos por hora y día y calcular la suma de vehículos para cada hora y día
+## ===========================================================================
+## ===========================================================================
+
+# Agrupamos por hora y día y calculamos la media de vehículos para cada hora y día
 vehiculos_hora <- resumen_vehiculos %>%
   group_by(hora, fecha) %>%
-  summarise(mean_total_volumen = mean(total_volumen))
-
+  summarise(mean_total_volumen = mean(sum(total_volumen)))
 
 # Crea el gráfico de barras apiladas
 
