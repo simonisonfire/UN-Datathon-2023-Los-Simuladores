@@ -69,3 +69,6 @@ rsconnect/
 *.exe
 *.o
 *.so
+
+# Base de datos muy pesada
+autoscope_09_2023.csv
