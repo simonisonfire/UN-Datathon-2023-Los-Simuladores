@@ -31,37 +31,32 @@ mapita_segmentos = mapita %>%
   summarise(median_DENS_P = median(DENS_P))
 
 st_crs(mapita_segmentos) = crs
-plot(mapita_segmentos)
+
+rm(mapita, crs)
 
 # Graficamos la densidad de población mediana por segmento censal
 
-CODSEGs_mvd <- ggplot(data = mapita_segmentos) +  
+ggplot(data = mapita_segmentos) +  
   geom_sf(aes(fill = median_DENS_P)) +
   scale_fill_gradient(low = "lightblue", high = "red") +
   ggtitle(label = "Densidad de población mediana por segmento censal")
 
-CODSEGs_mvd
-
 # Superponemos las rutas de ómnibus sobre el mapa de densidad de población mediana
 
-rutas_CODSEG <- ggplot(data = mapita_segmentos) +
+ggplot(data = mapita_segmentos) +
   geom_sf(aes(fill = median_DENS_P)) +
   scale_fill_gradient(low = "lightblue", high = "red") +
   ggtitle(label = "Densidad de población mediana por segmento censal\n y rutas de ómnibus en Montevideo") +
   geom_sf(data = rutas_bus, color = "lightyellow", size = 0.5)
 
-rutas_CODSEG
-
 # Mapa de densidad de población mediana y paradas de ómnibus
 
 paradas <- read_sf("Bases/v_uptu_paradas")
 
-mapita_segmentos <- st_transform(mapita_segmentos, crs = st_crs(paradas))
+paradas <- st_transform(paradas, crs = st_crs(mapita_segmentos))
 
-paradas_map <- ggplot(data = mapita_segmentos) +
+ggplot(data = mapita_segmentos) +
   geom_sf(aes(fill = median_DENS_P)) +
   scale_fill_gradient(low = "lightblue", high = "red") +
   ggtitle(label = "Densidad de población y paradas de ómnibus en Montevideo")+
   geom_sf(data = paradas, color = "black", size = 0.000001) 
-
-paradas_map
