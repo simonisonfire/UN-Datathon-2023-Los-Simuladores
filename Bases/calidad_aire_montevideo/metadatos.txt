@@ -1,0 +1,10 @@
+pollutant_id: Contaminante, String
+pollutant_averaging: Período de toma de muestra en horas, Integer
+date: Fecha, Timestamp
+pollutant_value: Concentracion de contaminante, Integer
+pollutant_unit: Unidad, String
+station_id: Denominación de la zona que caracteriza la estacion, String
+X: Localizacion. Coordenada X de la estación (UTM- Zona 21), Integer
+Y: Localizacion. Coordenada Y de la estación (UTM- Zona 21),Integer
+ID_estacion: Nombre de estacion, String
+method_id: Metodo de medida, String

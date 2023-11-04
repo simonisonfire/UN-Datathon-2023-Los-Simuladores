@@ -11,14 +11,14 @@ count_veh <- read.table("Bases/conteo_veh_set23/autoscope_09_2023_volumen.csv",
 # Seleccionamos las variables relevantes
 
 count_veh <- count_veh %>% 
-  select(cod_detector, fecha, hora, latitud, longitud, volume) %>% 
+  select(cod_detector, fecha, hora, latitud, longitud, volume, dsc_avenida) %>% 
   group_by(cod_detector) %>% 
-  reframe(fecha, hora, latitud, longitud, volume) 
+  reframe(fecha, hora, latitud, longitud, volume, dsc_avenida) 
 
 # Agregamos el total del volumen de vehículos
 
 resumen_vehiculos <- count_veh %>%
-  group_by(cod_detector, hora, fecha, latitud, longitud) %>%
+  group_by(cod_detector, hora, fecha, latitud, longitud, dsc_avenida) %>%
   reframe(total_volumen = sum(volume))
 
 # Arreglamos el formato y agregamos por hora
@@ -40,6 +40,8 @@ resumen_vehiculos <- resumen_vehiculos %>%
 
 rm(count_veh)
 
+resumen_vehiculos <- filter(resumen_vehiculos, semana == 36)
+
 ## ===========================================================================
 ## ===========================================================================
 
@@ -60,7 +62,7 @@ resumen_vehiculos <- resumen_vehiculos %>%
   filter(!is.na(hora)) %>% 
   filter(!is.na(cod_detector))
 
-ggplot(resumen_vehiculos, aes(x = hora, y = weekday, fill = log(total_volumen))) +
+ggplot(resumen_vehiculos, aes(x = hora, y = weekday, fill = total_volumen)) +
   geom_tile() +
   scale_fill_gradient(low = "white", high = "red") +
   labs(title = "Cantidad de Vehículos por Hora y Día de la Semana",
@@ -78,6 +80,7 @@ proj4string(resumen_vehiculos) <- CRS("+proj=longlat +datum=WGS84 +no_defs")
 crs_utm <- CRS("+proj=utm +zone=21 +south +datum=WGS84 +units=m +no_defs")
 
 # Realizamos la transformación
+
 resumen_vehiculos_utm <- spTransform(resumen_vehiculos, crs_utm)
 
 resumen_vehiculos_sf <- st_as_sf(resumen_vehiculos_utm)
@@ -92,6 +95,7 @@ ggplot() +
   geom_sf(data = mapita_segmentos, fill = "#e0ecf4") +
   geom_sf(data = avenidas, color = "#9ebcda", size = 0.005) +
   geom_sf(data = resumen_vehiculos_sf, aes(size = total_volumen), color = "#8856a7", alpha = 0.05, shape = 21) +
+  geom_jitter() +
   scale_size_continuous(range = c(2, 10)) +
   labs(title = "Mapa de Burbujas de Cantidad de Vehículos")
 
