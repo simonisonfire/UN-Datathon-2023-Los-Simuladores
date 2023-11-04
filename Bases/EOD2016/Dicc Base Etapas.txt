@@ -1,0 +1,130 @@
+Base de etapas			
+			
+Nombre Variable / Descripcion de variable / Codigo / Descripción codigo
+
+BL	Modo de la etapa	
+		11	Automóvil conductor
+		12 	Automóvil pasajero
+		13 	Moto conductor
+		14 	Moto pasajero
+		2 	A pie
+		3 	Bicicleta
+		41 	Remis
+		42 	Taxi
+		51 	Bus
+		52 	Ferrocarril
+		53 	Bus escolar
+		54 	Bus de la empresa
+		6 	Otro, Uber
+		7 	Otro, animal
+		8 	Otro, sin especificar
+
+Eb0p1	¿Cuántas cuadras caminó para llegar a la (parada o al vehículo)?
+		
+Eb0p2	¿Cuántas cuadras caminó desde (la parada o el vehículo) hasta (ACTIVIDAD)?
+		
+Eb1p1	¿Dónde estacionó? (transporte privado - p.e. auto o moto)	
+		1	De la empresa
+		2	Vía pública libre
+		3	Vía pública tarifada
+		4	Playa de estacionamiento
+		5	Cochera residencia
+		6	Otro 
+
+Eb1p2	¿Pagó estacionamiento? (transporte privado - p.e. auto o moto)	
+		1	Sí
+		2	No
+		9	Sin dato
+
+Eb1p3	¿Qué tipo de Pago utilizó? (transporte privado - p.e. auto o moto)	
+		1	Por hora
+		2	Por estadía
+		3	Abono mensual
+		9	Sin dato
+
+eb1p4	¿Cuánto pagó por el estacionamiento? (transporte privado - p.e. auto o moto)		
+		Descripción del valor (9999 SIN DATO)
+
+eb1p5	¿Pagó peaje? (transporte privado - p.e. auto o moto)	
+		1	Sí
+		2	No
+		9	Sin dato
+
+eb1p6	¿Cuánto pagó de peaje? (transporte privado - p.e. auto o moto)		
+		Descripción del valor (999 SIN DATO)
+
+eb1p7	¿Cuántas personas viajaron con usted?		
+		Descripción del número de personas (99 SIN DATO)
+
+Eb2p1	Indique la cantidad de cuadras (etapa a pie o caminata hasta vehículo o parada o desde vehículo o parada a destino final cuando es de 5 o más cuadras)
+		Descripción del número de cuadras (99 SIN DATO)
+
+eb6p1	¿Cuál fue el motivo por el que camino esta distancia? (caminatas de 5 o más cuadras)	
+		1	No quiere pagar la tarifa
+		2	No tiene dinero para pagar la tarifa
+		3	No tiene otra opción de transporte
+		4	Para evitar el trasbordo
+		5	Le gusta
+		6	Por salud
+		7	No le parece larga
+		8	Ningún motivo en particular
+		9	Otro
+		99	Sin dato
+
+Eb3p1	¿Dónde dejó la bicicleta una vez que llego a su destino?	
+		1	Dentro de edificio
+		2	En la calle
+		3	En bicicletario público
+		4	En bicicletario privado
+		5	En estación movete
+		6	Otro
+		8	Ns Nc
+		9	Sin dato
+
+Eb4p1	¿Cuánto pagó por el taxi o remise?		
+		Descripción del monto (9999 SIN DATO)
+
+Eb4p2	¿Pagó usted por el taxi o remise?	
+		1	Sí
+		2	No
+		3	A medias
+		9	Sin dato
+
+Eb4p3	¿Cuántas personas viajaron con usted?		
+		Descripción del número de personas
+
+Eb5bp1l	En este viaje en ÓMNIBUS, ¿qué linea utilizó? Declaración de entrevistado, variable sin depurar		
+		Descripción de la línea de bus (9999 SIN DATO)
+		99999	Sin dato
+
+Eb5bp4	¿Cuánto tiempo debió esperar en la parada?		
+		Descripción del tiempo, expresado en minutos (999 SIN DATO)
+
+eb5bp5	¿Qué tipo de boleto compró?		
+		1	Boleto común
+		2	Boleto céntrico
+		3	Boleto 1 hora
+		4	Boleto 2 horas
+		5	Boleto Diferencial
+		6	Jubilado A
+		7	Jubilado B
+		8	Estudiante A
+		9	Estudiante B
+		10	Estudiante gratuito
+		11	Pase organismos o libres
+		12	Otros gratuitos
+		13	Prepago nominado
+		14	Metropolitano
+		15	Zonal
+		16	Combinación Canaria
+		17	Local Canelones
+		18	Boleto Zonal Suburbano
+		19	Abono Suburbano
+		20	Tren ida
+		21	Tren vuelta
+		22	Abono Ferrocarril
+		99	Sin dato
+
+codsegparadasube	Código de segmento censal de parada que sube (etapa en bus). Segmentos correspondientes a Censo 2011
+		
+codsegparadabaja	Código de segmento censal de parada que baja (etapa en bus). Segmentos correspondientes a Censo 2011		

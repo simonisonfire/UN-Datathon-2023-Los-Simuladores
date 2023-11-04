@@ -1,0 +1,42 @@
+Variables de identificación, estrato y nivel socioeconómico (transversal a todas las bases)				
+				
+Variables de identificación/ CONSECUTIVO / ID compuesto de cada caso / Cálculo código compuesto				
+Hogar				nform		NFORM			NFORM
+Persona				nnper		IDPER			IDPER  =NFORM*100+nnper
+Viaje				nvj		IDPERV			IDPERV =IDPER*100+nvj 
+Etapa				netp		IDPERVE			IDPERVE=IDPERV*100+netp                 
+
+				
+Estrato muestral y ponderador: 	
+			
+Estrato Geografico (Estratos muestrales, define ubicación. Con esta variable es posible construir departamento o regiones) 			
+	
+	Montevideo Alto                                   			
+	Montevideo Bajo                                   			
+	Montevideo Medio                                  			
+	Montevideo Medio Alto                             			
+	Montevideo Medio Bajo                             			
+	Zona I - Casavalle            Bajo			
+	Zona I - Casavalle            NoBajo			
+	Zona II - Cuenca Noreste      Bajo			
+	Zona II - Cuenca Noreste      NoBajo			
+	Zona III - Cuenca Cerro Norte Bajo			
+	Zona III - Cuenca Cerro Norte NoBajo			
+	Canelones Capital, Santa Lucía y Otras			
+	Ciudad de la Costa, Paso Carrasco, Salinas Grandes y Otras			
+	Ciudad del Plata, Libertad			
+	La Floresta, Atlántida y Otras			
+	Las Piedras, La Paz, Progreso y Otras			
+	Pando			
+	Sauce, San Jacinto, Tala,  Santoral  y Otras			
+	Toledo, Suarez y Otras			
+
+wcal0	Ponderador			
+				
+Nivel socioeconómico
+				
+INSE 		Indice de nivel socioeconómico (puntaje)	
+			Ver descripción en informe de encuesta	
+	
+INSE_RecF 	Indice de nivel socioeconómico (agrupado)	
+			Ver descripción en informe de encuesta		

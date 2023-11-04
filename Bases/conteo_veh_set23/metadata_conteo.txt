@@ -1,0 +1,26 @@
+El archivo en formato csv contiene un registro con datos de la medición del sensor cada 5 minutos. Los datos de conteo son el acumulado o promedio según corresponda en los últimos 5 minutos a la fecha y hora indicados en el registro.
+
+-----------------------------------------------------------------------------------
+id_detector: Entero : es el id de la cámara que está monitoerando un determinado carril donde realiza el análisis de imágen para detectar la presencia de un vehículo
+
+id_carril: Entero: es el numero del carril que se está monitoreando (de 1 a ?) donde 1 es el carril de más a la ??izquierda??
+
+fecha: AAAA-MM-DD : Día en que se toma la muestra
+
+hora: hh:mm:ss : Hora en que se toma la muestra
+
+dsc_avenida: Texto : Nombre de la vía en la que se mide el tránsito
+
+dsc_int_anterior:  Texto : Nombre de la vía que forma el cruce desde donde vienen los vehículos.
+
+dsc_int_siguiente:  Texto : Nombre de la vía que forma el cruce donde está el medidor, en general el mismo se encuentra un poco antes de esta vía. El sentido de circulación será desde el curce con dsc_int_anterior hacia el curce con dsc_int_siguiente.
+
+latitud: Float : latitud de donde está el medidor
+
+longitud: Float: longitud de donde está el medidor
+
+volumen: Enterno : Cantidad de vehículos detectados en el carril en los últimos 5 minutos
+
+volumen_hora: Enterno : Cantidad de vehículos detectados en el carril en la última hora
+
+-----------------------------------------------------------------------------------

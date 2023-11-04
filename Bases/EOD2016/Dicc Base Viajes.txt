@@ -1,0 +1,92 @@
+Base de viajes			
+			
+Nombre Variable / Descripcion de variable / Codigo / Descripción codigo
+
+origen	Actividad en el origen del viaje	
+		1	Hogar
+		2	Trabajo
+		3	Trámites trabajo
+		4	Trámites personal
+		5	Estudios         
+		6	Compras (hogar)
+		7	Compras
+		8	Asistencia_médica
+		9	Culto
+		10	Ir a comer
+		11	Dejar/recoger niños
+		12	Dejar/recoger a alguien
+		13	Visitar a alguien
+		14	Acompañar a alguien
+		15	Entretenimiento / ocio
+		16	Otro
+		99	Sin_dato
+
+proposito	Propósito del viaje	
+		1	Regreso al hogar/hogar
+		2	Trabajo
+		3	Trámites trabajo
+		4	Trámites personal
+		5	Estudios         
+		6	Compras (hogar)
+		7	Compras
+		8	Asistencia_médica
+		9	Culto
+		10	Ir a comer
+		11	Dejar/recoger niños
+		12	Dejar/recoger a alguien
+		13	Visitar a alguien
+		14	Acompañar a alguien
+		15	Entretenimiento / ocio
+		16	Otro
+		99	Sin_dato
+
+Vf5	Hora de inicio del viaje (comienza en la hora 4, las horas 24 a 28 corresponden a la medianoche, 1, 2, 3 y 4 am del día siguiente)		
+		Descripción de hora
+		"88,88 
+99,99"	Sin dato
+
+Vf6	Hora de llegada al destino (comienza en la hora 4, las horas 24 a 28 corresponden a la medianoche, 1, 2, 3 y 4 am del día siguiente)		
+		Descripción de hora
+		"88,88 
+99,99"	Sin dato
+
+tiempoviaje	Tiempo de viaje en minutos		
+		Cantidad de minutos
+
+modoprincipal	Modo principal del viaje	
+		0	A pie hasta 10 cuadras
+		1	A pie
+		2	Bicicleta
+		3	Otro, animal
+		4	Remise
+		5	Otro Uber
+		6	Taxi
+		7	Auto pasajero
+		8	Auto conductor
+		9	Moto pasajero
+		10	Moto conductor
+		11	Bus escolar
+		12	Bus de la empresa
+		13	Bus
+		14	Ferrocarril
+		15	Otros, sin especificar
+
+Vf9	¿Con qué frecuencia realiza este mismo viaje desde (origen) a (destino) 	
+		1	5 días a la semana o más
+		2	3 o 4 días a la semana
+		3	1 o 2 días a la semana
+		4	2 o 3 días al mes
+		5	1 día al mes o menos
+		9	Sin_dato
+
+etapas	Cantidad de etapas del viaje		
+		Número de etapas
+
+cuadras	Cantidad de cuadras caminadas (se trata de viajes realizados a pie o en aquellos con modo principal que no sea a pie viajes con etapas de 5 o más cuadras a pie (por ej. para llegar a la parada o al destino final). Los viajes en modos motorizados que no cuentan con dato en esta variable deben ser complementados con la variable "cuadras antes" y "cuadras después" de la base de etapas. Los 15  casos de viajes motorizados con cantidad de cuadras menor a 5 se tratan de errores de digitación, deben ser leídos como cuadras antes o después del modo motorizado.		
+		Número de cuadras
+
+codsegorigen	Código de segmento censal de origen del viaje (segmentos correspondientes a Censo 2011)		
+		Valores perdidos corresponden a sin dato y viajes originados o con destino fuera del Área Metropolitana
+
+codsegproposito	Código de segmento censal de destino del viaje (segmentos correspondientes a Censo 2011)		
+		Valores perdidos corresponden a sin dato y viajes originados o con destino fuera del Área Metropolitana

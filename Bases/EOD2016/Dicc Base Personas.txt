@@ -1,0 +1,161 @@
+Base de personas			
+			
+Nombre Variable / Descripcion de variable / Codigo / Descripción codigo
+
+
+Sexo	Sexo de la persona	
+		1	Masculino
+		2	Femenino
+
+Edad	Edad de la persona		
+		Años de edad
+
+Parentesco	Parentesco respecto al jefe de hogar	
+		1	Jefe
+		2	Esposo/a o compañero/a
+		3	Hijo/a de ambos
+		4	Hijo/a solo del jefe
+		5	Hijo/a solo del esposo/a o compañero/a
+		6	Yerno/nuera
+		7	Padre/madre
+		8	Suegro/a
+		9	Hermano/a
+		10	Cuñado/a
+		11	Nieto/a
+		12	Otro pariente
+		13	Otro no pariente
+		14	Servicio doméstico o familiares del mismo
+		99	Sin dato
+
+e3	¿Asiste o asistió a un establecimiento de enseñanza?	
+		1	Sí,_asiste_actualmente
+		2	Sí,_asistió
+		3	No_asistió
+		9	Sin_dato
+
+e4	¿A qué nivel está asistiendo o cuál fue el más alto alcanzado?	
+		1	Preescolar
+		2	Primaria
+		3	Secundaria
+		4	Enseñanza_Técnica
+		5	Magisterio, profesorado
+		6	Universidad_similar
+		7	Posgrado
+		9	Sin_dato
+
+e4a	Para ese curso se exigía (aplica a enseñanza técnica en e4)	
+		1	Secundaria_completa
+		2	Secundaria_1°ciclo
+		3	Primaria_completa
+		4	Ninguna
+		9	Sin_dato
+
+e5	¿Cuál fué el año más alto aprobado?		
+		Descripción
+
+e6	¿Finalizó el nivel más alto alcanzado?	
+		1	Sí
+		2	No
+		9	Sin_dato
+
+e7	¿En qué servicio o institución atiende su salud más frecuentemente?	
+		1	Policial_Militar
+		2	ASSE_u_otra_pública
+		3	Mutualista
+		4	Seguro_privado
+		5	Otra
+		9	Sin_dato
+
+e7ob	Especificación de otro en, ¿En qué servicio o institución atiende su salud? e7 = 5
+
+e8	Durante la semana pasada, ¿trabajó por lo menos una hora sin considerar los quehaceres de su hogar?	
+		1	Sí
+		2	No
+		9	Sin dato
+
+e9	¿Tiene un trabajo al que volverá?	
+		1	No
+		2	Sí
+		9	Sin dato
+
+e10	¿Cuál fue su actividad principal en la última semana?	
+		1	Está_buscando_trabajo
+		2	Estudiante
+		3	Realiza_quehacerer del hogar
+		4	Jubilado_pensionista
+		5, 6 y 7	Sin dato
+		8	Rentista
+		9	Ninguna
+
+e11	¿Cuántas horas ha trabajado en la última semana en todos sus trabajos?	
+		Descripción de horas
+
+e12	¿Generalmente, dónde desarrolla su trabajo?	
+		1	En_su_vivienda
+		2	En_lugar_fijo_no
+		3	En_la_calle
+		4	En_dos_lugares_distintos
+		5	En_múltiples_lugares
+		6	Otra
+		9	Sin dato
+
+e14	Previo al desarrollo de las tareas, ¿debe presentarse obligatoriamente en alguna dirección fija?	
+		1	Sí
+		2	No
+		9	Sin dato
+
+e15	¿Tiene licencia de conducir?	
+		1	Sí
+		2	Sí, pero está vencida
+		3	No
+		9	Sin dato
+
+e16	¿Podría Ud. indicar la posibilidad de uso del vehículo cuando necesita desplazarse?	
+		1	Nunca
+		2	Pocas_veces
+		3	Habitualmente
+		4	Muchas_veces
+		5	Siempre
+		9	Sin_dato
+
+e17	¿Dónde estaba usted a las 4 de la mañana del día de ayer?	
+		1	Hogar
+		2	Lugar de trabajo
+		3	Casa de amigos o familiares
+		4	Lugar de recreación
+		5	Hospital centro médico
+		6	Otro
+		9	Sin_dato
+
+e19	¿Fue a algún lugar entre las 4 de la mañana del día de ayer y las 4 de la mañana del día de hoy...?	
+		1	Sí
+		2	No
+		9	Sin_dato
+
+e20	¿Por qué motivo no fue a ningún lugar? (sin reclasificación de opción "otros")	
+		1	Incapacidad física
+		2	Enfermedad transitoria
+		3	Vacaciones, licencias o razones gremiales
+		4	Quedarse_en_el_hogar esperando algo
+		5	Quedarse_en_el_hogar cuidando un familiar
+		6	Auto_no_disponible, averiado
+		7	Clima_adverso
+		8	Trabaja_en_la_casa
+		9	Huelga_del_transporte
+		10	Ninguna_razón_en_especial
+		11	Otro
+		98	Ns_Nc
+		99	Sin_dato
+
+e200b	Descripción de otro en, ¿Por qué motivo no fue  ningún lugar? (resultados no codificados) e20ob = 11
+
+Form_Op_Hab	Realizó el módulo de opinión y hábitos	
+		0	No realizó módulo Opinión y Hábitos
+		1	Realizó módulo Opinión y Hábitos
+
+codsegtrabprinc	Código de segmento censal del trabajo principal (segmentos correspondientes a Censo 2011)		
+
+codsegpresentrab Código de segmento censal del lugar donde debe presentarse si no es lugar fijo (segmentos correspondientes a Censo 2011)		
+
+codsegcomenzodia Código de segmento censal del lugar donde comenzó el día a las 4am (segmentos correspondientes a Censo 2011) 
+		Solo para entrevistados que no comenzaron el día en el hogar

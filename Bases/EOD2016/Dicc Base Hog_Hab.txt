@@ -1,0 +1,716 @@
+Base de hogares y habitos			
+			
+Nombre Variable / Descripcion de variable / Codigo / Descripción codigo
+
+c1	Tipo de vivienda
+		1	Casa
+		2	Apartamento_o_casa_en_Complejo
+		3	Apartamento_en_edificio_de_altura
+		4	Apartamento_en_edificio_de_una_planta
+		5	Local_no_constuido_para_vivienda
+		9	Sin_dato
+
+c2	Con respecto a esta vivienda, el hogar es propietario?	
+		1	S¡ 
+		2	No
+		9	Sin dato
+
+c3	Cual es el material predominante de los techos de la vivienda?	
+		1	De_chapa_u_otro_material_precario
+		2	De_material
+		3	Materiales_de_desecho
+		9	Sin_dato
+
+c4	Esta vivienda tiene bano?	
+		1	S¡ 
+		2	No
+		9	Sin dato
+
+c5	Con cuantos banos cuenta esta vivienda?	
+		9	Sin dato
+
+d1a	Aire acondicionado	
+		1	S¡ 
+		2	No
+		9	Sin dato
+
+d1b	Computadora	
+		1	S¡ 
+		2	No
+		9	Sin dato
+
+d1c	Acceso a internet	
+		1	S¡ 
+		2	No
+		9	Sin dato
+
+d1d	Lavarropa	
+		1	S¡ 
+		2	No
+		9	Sin dato
+
+d1e	Bicicleta	
+		1	S¡ 
+		2	No
+		9	Sin dato
+
+d1ecan	Cantidad de biciletas	
+		1	S¡ 
+		2	No
+		9	Sin dato
+
+d1f	Ciclomotor	
+		1	S¡ 
+		2	No
+		9	Sin dato
+
+d1fcan	Cantidad de ciclomotores	
+		99	Sin dato
+
+d1g	Automovil	
+		1	S¡ 
+		2	No
+		9	Sin dato
+
+d1gcan	Cantidad de automoviles	
+		99	Sin dato
+
+d2aT	Tipo de vehiculo motorizado 1	
+		1	Auto_Camioneta
+		2	Moto
+		3	Otro_Vehiculo
+		8 o 9	"Sin_dato - ""Salto"" = no corresopnde"
+
+d2bT	Tipo de vehiculo motorizado 2
+		1	Auto_Camioneta
+		2	Moto
+		3	Otro_Vehiculo
+		8 o 9	"Sin_dato - ""Salto"" = no corresopnde"
+
+d2cT	Tipo de vehiculo motorizado 3
+		1	Auto_Camioneta
+		2	Moto
+		3	Otro_Vehiculo
+		8 o 9	"Sin_dato - ""Salto"" = no corresopnde"
+
+d2dT	Tipo de vehiculo motorizado 4	
+		1	Auto_Camioneta
+		2	Moto
+		3	Otro_Vehiculo
+		8 o 9	"Sin_dato - ""Salto"" = no corresopnde"
+
+d2eT	Tipo de vehiculo motorizado 5
+		1	Auto_Camioneta
+		2	Moto
+		3	Otro_Vehiculo
+		8 o 9	"Sin_dato - ""Salto"" = no corresopnde"
+
+d2fT	Tipo de vehiculo motorizado 6
+		1	Auto_Camioneta
+		2	Moto
+		3	Otro_Vehiculo
+		8 o 9	"Sin_dato - ""Salto"" = no corresopnde"
+
+d2aP	Propiedad del vehiculo	
+		1	Propio uso particular
+		2	Propio de trabajo
+		3	Empresa Gobierno
+		9	Sin dato
+
+d2bP	Propiedad del vehiculo	
+		1	Propio uso particular
+		2	Propio de trabajo
+		3	Empresa Gobierno
+		9	Sin dato
+
+d2cP	Propiedad del vehiculo	
+		1	Propio uso particular
+		2	Propio de trabajo
+		3	Empresa Gobierno
+		9	Sin dato
+
+d2dP	Propiedad del vehiculo	
+		1	Propio uso particular
+		2	Propio de trabajo
+		3	Empresa Gobierno
+		9	Sin dato
+
+d2eP	Propiedad del vehiculo	
+		1	Propio uso particular
+		2	Propio de trabajo
+		3	Empresa Gobierno
+		9	Sin dato
+
+d2fP	Propiedad del vehiculo	
+		1	Propio uso particular
+		2	Propio de trabajo
+		3	Empresa Gobierno
+		9	Sin dato
+
+d3	Tiene un lugar para guardar autos o camionetas en la vivienda?	
+		1	S¡
+		2	No
+		9	Sin dato
+
+d4	Cuantos autos o camionetas puede guardar?		
+		Descripcion de cantidad
+
+d5	Cuantas personas viven habitualmente en este hogar?		
+		Descripcion de cantidad
+
+d5a	Cantidad efectiva de personas relevadas		
+		Descripcion de cantidad
+
+d7	Este hogar cuenta con servicio domestico?	
+		1	No
+		2	S¡_Por_d¡a_Por_hora
+		3	S¡_con_cama
+		9	Sin_dato
+
+d10	Cuantas personas perciben ingresos en el hogar?	
+		99	Sin_dato
+
+Opinion y habitos
+			
+Este modulo fue respondido por una persona por hogar seleccionada aleatoriamente. 			
+Para conocer los atributos de la persona que conteste el modulo, ver variable form_op_hab en base de personas			
+			
+g2	Cual es el modo de transporte que utiliza con mas frecuencia?	
+		1	Omnibus
+		2	Auto, caminoneta
+		3	Moto
+		4	Caminata
+		5	Bicicleta
+		6	Taxi
+		7	Otros
+		9	Sin dato
+
+g3a	Ha utilizado el transporte publico urbano en el ultimo mes	
+		1	S¡
+		2	No
+		9	Sin dato
+
+g3b	Ha utilizado el transporte publico suburbano en el ultimo mes	
+		1	S¡
+		2	No
+		9	Sin dato
+
+g4a	Con que frecuencia lo ha hecho? Urbano	
+		1	4 o mas veces por semana
+		2	Entre 1 y 3 veces por semana
+		3	Entre 1 y 3 veces por mes
+		9	Sin dato
+
+g4b	Con que frecuenca lo ha hecho? Suburbano	
+		1	4 o mas veces por semana
+		2	Entre 1 y 3 veces por semana
+		3	Entre 1 y 3 veces por mes
+		9	Sin dato
+
+g5a	Cual es la linea urbana que utiliza con mayor frecuencia? Urbana Declaracion de entrevistado sin depurar
+		9999	Sin dato
+
+g5b	Cual es la linea que utiliza con mayor frecuencia? Suburbana Declaracion de entrevistado sin depurar
+		9999	Sin dato
+
+g50b	Destino
+		Descripcion del destino
+
+g6a	1 aspecto del Sistema de Transorte en omnibus que considera importante	
+		1	Frecuencia
+		2	Puntualidad
+		3	Tiempo_de_viaje
+		4	Precio
+		5	Atencion_del_pers
+		6	Limpieza
+		7	Modo_de_conduccio
+		8	Comodidad_en_el_viaje
+		9	Distancia_a_la_parada
+		10	Faciliada_para_subir
+		11	Informacion_disponible
+		12	Paradas_de_buses
+		13	Otro
+		99	Sin_dato
+
+g6b	2 aspecto del Sistema de Transorte en omnibus que considera importante	
+		1	Frecuencia
+		2	Puntualidad
+		3	Tiempo_de_viaje
+		4	Precio
+		5	Atencion_del_pers
+		6	Limpieza
+		7	Modo_de_conduccio
+		8	Comodidad_en_el_viaje
+		9	Distancia_a_la_parada
+		10	Faciliada_para_subir
+		11	Informacion_disponible
+		12	Paradas_de_buses
+		13	Otro
+		99	Sin_dato
+
+g6c	3 aspecto del Sistema de Transorte en omnibus que considera importante	
+		1	Frecuencia
+		2	Puntualidad
+		3	Tiempo_de_viaje
+		4	Precio
+		5	Atencion_del_pers
+		6	Limpieza
+		7	Modo_de_conduccio
+		8	Comodidad_en_el_viaje
+		9	Distancia_a_la_parada
+		10	Faciliada_para_subir
+		11	Informacion_disponible
+		12	Paradas_de_buses
+		13	Otro
+		99	Sin_dato
+
+g7a	Valoracion Frecuencia (Urbano)	
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7b	Valoracion Puntualidad (Urbano)	
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7c	Valoracion Tiempo de viaje (Urbano)	
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7d	Valoracion Precio (Urbano)	
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7e	Valoracion Precio en funcion de calidad recibida (Urbano)	
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7f	Valoracio Atencion de personal (Urbano)	
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7g	Valoracion Limpieza (Urbano)	
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7h	Valoracion Modo de conduccion (Urbano)	
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7i	Valoracion Comodidad en el viaje (Urbano)	
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7j	Valoracion Facilidad para subir y bajar de bus (Urbano)
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7k	Valoracion Distancia a la parada (Urbano)	
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7l	Valoracion Informacion disponible sobre el sistema (Urbano)	
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7m	Valoracion Paradas de buses (Urbano)	
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7n	Valoracion Frecuencia (Suburbano)		
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7o	Valoracion Puntualidad (Suburbano)	
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7p	Valoracion Tiempo de viaje (Suburbano)	
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7q	Valoracion Precio (Suburbano)	
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7r	Valoracion Precio en funcion de calidad recibida (Suburbano)	
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7s	Valoracion Atencion de personal (Suburbano)		
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7t	Valoracion Limpieza (Suburbano)	
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7u	Valoracion Modo de conduccion (Suburbano)	
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7v	Valoracion Comodidad en el viaje (Suburbano)	
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7w	Valoracion Facilidad para subir y bajar de bus (Suburbano)	
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7x	Valoracion Distancia a la parada (Suburbano)	
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7y	Valoracion Informacion disponible sobre el sistema (Suburbano)	
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g7z	Valoracion Paradas de buses (Suburbano)	
+		1	Muy_malo
+		2	Malo
+		3	Ni_bueno_ni_malo
+		4	Bueno
+		5	Muy_bueno
+		9	Sin_Dato
+
+g8a_x	Como se informa de los HORARIOS de los buses? 1 mencion
+		1	Web_de_la_empresa
+		2	Telefonos_de_la_empresa
+		3	Empleados_de_la_empresa
+		4	Aplicaciones_movil
+		5	Personas_desconocidas
+		6	Personas_conocida
+		7	Folleto
+		8	Webs_gubernamental
+		9	Como_ir
+		10	Viaja poco no precisa
+		11	Conoce los horarios
+		12	No se informa, va a la parada
+		13	Se informa en terminal
+		14	Se informa en parada
+		15	Por costumbre o experiencia
+		16	Google
+		17	Internet
+		18	Otro
+		99	Sin_dato
+
+g8b_x	Como se informa de los HORARIOS de los buses? 2 mencion	
+		1	Web_de_la_empresa
+		2	Telefonos_de_la_empresa
+		3	Empleados_de_la_empresa
+		4	Aplicaciones_movil
+		5	Personas_desconocidas
+		6	Personas_conocida
+		7	Folleto
+		8	Webs_gubernamental
+		9	Como_ir
+		10	Viaja poco no precisa
+		11	Conoce los horarios
+		12	No se informa, va a la parada
+		13	Se informa en terminal
+		14	Se informa en parada
+		15	Por costumbre o experiencia
+		16	Google
+		17	Internet
+		18	Otro
+		99	Sin_dato
+
+g9a_x	Como se informa de los RECORRIDOS de los buses? 1 mencion	
+		1	Web_de_la_empresa
+		2	Telefonos_de_la_empresa
+		3	Empleados_de_la_empresa
+		4	Aplicaciones_m¢vil
+		5	Personas_desconocidas
+		6	Personas_conocida
+		7	Folleto
+		8	Webs_gubernamental
+		9	Como_ir
+		10	No hay informaci¢n
+		11	Conoce los horarios
+		12	No se informa, va a la parada
+		13	Se informa en terminal
+		14	Se informa en la parada
+		15	Por costumbre o experiencia
+		16	Google
+		17	Internet
+		18	Viaja poco no precisa
+		19	En guias impresas
+		20	Otros
+		99	Sin dato
+
+g9b_x	Como se informa de los RECORRIDOS de los buses? 2 mencion
+		1	Web_de_la_empresa
+		2	Telefonos_de_la_empresa
+		3	Empleados_de_la_empresa
+		4	Aplicaciones_movil
+		5	Personas_desconocidas
+		6	Personas_conocida
+		7	Folleto
+		8	Webs_gubernamental
+		9	Como_ir
+		10	No hay informaci¢n
+		11	Conoce los horarios
+		12	No se informa, va a la parada
+		13	Se informa en terminal
+		14	Se informa en la parada
+		15	Por costumbre o experiencia
+		16	Google
+		17	Internet
+		18	Viaja poco no precisa
+		19	En guias impresas
+		20	Otros
+		99	Sin dato
+
+g10a_x	Que factores serian determinantes  para que Ud. utilizara el omnibus? 1 mencion
+		1	Pasar mas frecuentemente
+		2	Ser mas regulares/puntuales
+		3	Pasar mas cerca de donde me sirve
+		4	Viajar sentado o mas comodo
+		5	Ser mas barato
+		6	Menor tiempo de viajes
+		7	Pasar mas seguido en la noche
+		8	Servicio diferencial
+		9	Disponer del servicio que preciso
+		10	No andaria mas seguido, no hay como el auto
+		11	Viajo muy poco
+		12	Mayor seguridad
+		13	Ya usa bastante bus
+		14	Usa moto
+		15	Camina o usa bici
+		16	Usa taxi/remise/bus de la empresa
+		17	No tener disponible el auto o la moto
+		18	Ya esta  conforme con el servicio como es
+		19	Coches mas limpios
+		20	No usa por salud o discapacidad f¡sica
+		21	Depende de las distancias
+		22	Mejor atenci¢n del personal/manejo/uso de la radio
+		23	Mas facilidad para subir/acceso sillas/mejores asientos
+		24	Que sea mas facil viajar con ninos/discapacit/cargas
+		25	Mejor estado paradas/calles/buses
+		26	Usa en tiempo con inclemencias
+		98	Ns_Nc
+		99	Sin_dato
+
+g10b_x	Que factores serian determinantes  para que Ud. utilizara el omnibus? 2 mencion
+		1	Pasar mas frecuentemente
+		2	Ser mas regulares/puntuales
+		3	Pasar mas cerca de donde me sirve
+		4	Viajar sentado o mas comodo
+		5	Ser mas barato
+		6	Menor tiempo de viajes
+		7	Pasar mas seguido en la noche
+		8	Servicio diferencial
+		9	Disponer del servicio que preciso
+		10	No andaria mas seguido, no hay como el auto
+		11	Viajo muy poco
+		12	Mayor seguridad
+		13	Ya usa bastante bus
+		14	Usa moto
+		15	Camina o usa bici
+		16	Usa taxi/remise/bus de la empresa
+		17	No tener disponible el auto o la moto
+		18	Ya esta conforme con el servicio como es
+		19	Coches mas limpios
+		20	No usa por salud o discapacidad f¡sica
+		21	Depende de las distancias
+		22	Mejor atencion del personal/manejo/uso de la radio
+		23	Mas facilidad para subir/acceso sillas/mejores asientos
+		24	Que sea mas facil viajar con ninos/discapacit/cargas
+		25	Mejor estado paradas/calles/buses
+		26	Usa en tiempo con inclemencias
+		98	Ns_Nc
+		99	Sin_dato
+
+g10c_x	Que factores serian determinantes para que Ud. utilizara el omnibus? 3 mencion
+		1	Pasar mas frecuentemente
+		2	Ser mas regulares/puntuales
+		3	Pasar mas cerca de donde me sirve
+		4	Viajar sentado o mas comodo
+		5	Ser mas barato
+		6	Menor tiempo de viajes
+		7	Pasar mas seguido en la noche
+		8	Servicio diferencial
+		9	Disponer del servicio que preciso
+		10	No andaria mas seguido, no hay como el auto
+		11	Viajo muy poco
+		12	Mayor seguridad
+		13	Ya usa bastante bus
+		14	Usa moto
+		15	Camina o usa bici
+		16	Usa taxi/remise/bus de la empresa
+		17	No tener disponible el auto o la moto
+		18	Ya esta conforme con el servicio como es
+		19	Coches mas limpios
+		20	No usa por salud o discapacidad f¡sica
+		21	Depende de las distancias
+		22	Mejor atencion del personal/manejo/uso de la radio
+		23	Mas facilidad para subir/acceso sillas/mejores asientos
+		24	Que sea mas facil viajar con ninos/discapacit/cargas
+		25	Mejor estado paradas/calles/buses
+		26	Usa en tiempo con inclemencias
+		98	Ns_Nc
+		99	Sin_dato
+
+g11	Generalmente, y dejando de lado salidas de paseo, con que‚ frecuencia utiliza la bicicleta para sus viajes?	
+		1	4 o m s veces por semana
+		2	Entre 1 y 3 veces por semana
+		3	Entre 1 y tres veces por mes
+		4	No la uso nunca
+		9	Sin dato
+
+g12a_x	Por que razones diria UD. que no viaja mas seguido en bicicleta? (respuesta espontanea) 1 mencion
+		1	No_tiene
+		2	Tiene_pero_no_disponible
+		3	Es_inseguro_el_manejo
+		4	Inclemencias_del_clima
+		5	No_tengo_donde_cambiar_ropa
+		6	Distancia_muy_larga del viaje
+		7	No_tiene_lugar_seguro donde dejarla
+		8	No_tiene_edad_suficiente
+		9	Salud_o_edad_avanzada
+		10	Inseguridad_en_la calle
+		11	Me_gusta_solo_para salir a pasear
+		12	Nunca usa, no usa, no sabe andar
+		13	Ya uso frecuentemente
+		14	Usa siempre para todo
+		15	Por incomodidad
+		16	Prefiere caminar
+		17	Prefiere moto o auto
+		18	Faltan bicisendas, infraestructura urbana
+		19	No tiene tiempo
+		20	Discapacidad
+		21	Falta de costumbre
+		22	Tiempo que le lleva viaje
+		23	No le gusta, no le interesa
+		24	Las bicicletas en casa son de ninos o jovenes
+		25	Otro
+		99	Sin_dato
+
+g12b_x	Por que razones diria UD. que no viaja mas seguido en bicicleta? (respuesta espontanea) 2 mencion
+		1	No_tiene
+		2	Tiene_pero_no_disponible
+		3	Es_inseguro_el_manejo
+		4	Inclemencias_del_clima
+		5	No_tengo_donde_cambiar_ropa
+		6	Distancia_muy_larga del viaje
+		7	No_tiene_lugar_seguro donde dejarla
+		8	No_tiene_edad_suficiente
+		9	Salud_o_edad_avanzada
+		10	Inseguridad_en_la calle
+		11	Me_gusta_solo_para salir a pasear
+		12	Nunca usa, no usa, no sabe andar
+		13	Ya uso frecuentemente
+		14	Usa siempre para todo
+		15	Por incomodidad
+		16	Prefiere caminar
+		17	Prefiere moto o auto
+		18	Faltan bicisendas, infraestructura urbana
+		19	No tiene tiempo
+		20	Discapacidad
+		21	Falta de costumbre
+		22	Tiempo que le lleva viaje
+		23	No le gusta, no le interesa
+		24	Las bicicletas en casa son de ninos o jovenes
+		25	Otro
+		99	Sin_dato
+
+codseghogar	Codigo de segmento censal del hogar (segmentos correspondientes a Censo 2011)		
