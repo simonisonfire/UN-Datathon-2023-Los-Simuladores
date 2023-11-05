@@ -1,6 +1,8 @@
 ## ===========================================================================
 ## ===========================================================================
 
+library(tidyverse)
+library(sf)
 library(sp)
 
 ## Importamos la base de conteo vehicular para el mes de setiembre de 2023

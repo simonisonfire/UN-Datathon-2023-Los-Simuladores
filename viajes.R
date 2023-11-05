@@ -3,6 +3,7 @@
 
 ## Cargamos la librería srvyr para trabajar con la encuesta
 
+library(tidyverse)
 library(srvyr)
 library(survey)
 
