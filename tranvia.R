@@ -1,9 +1,13 @@
 ##======================================================================================
+install.packages("devtools")
+devtools::install_github("bbc/bbplot")
+##======================================================================================
 
 library(tidyverse)
 library(sf)
 library(sp)
-
+library(devtools)
+library(bbplot)
 #======================================================================================
 # 1er dataframe con paradas de Tranvía
 # Ruta 1 - Manga
@@ -327,5 +331,14 @@ ggplot() +
   scale_color_manual(values = colores_lineas, labels = lineas_tranvia) +  # Define la escala de color y etiquetas
   labs(title = "Mapa del Sistema Tranviario de Montevideo") +
   theme_void() +
-  theme(legend.position = "right") +  # Coloca la leyenda a la derecha
+  theme(plot.title = element_text(family = "serif",              # Font family
+                                  face = "bold",                 # Font face
+                                  color = "#FFA500",             # Font color
+                                  size = 25,                     # Font size
+                                  hjust = 0.5,                   # Horizontal adjustment
+                                  lineheight = 1,                # Line spacing
+                                  margin = margin(0, 0, 0, 0)))
+
+ 
++ theme(legend.position = "right") +  # Coloca la leyenda a la derecha
   labs(color = "Línea de Tranvía")  # Cambia el título de la leyenda
