@@ -22,6 +22,7 @@ base_viajes$wcal0 <- gsub(",", ".", base_viajes$wcal0)
 base_viajes$wcal0 <- as.double(base_viajes$wcal0)
 base_viajes$VF6 <- as.double(base_viajes$VF6)
 base_viajes$VF5 <- as.double(base_viajes$VF5)
+base_viajes$INSE <- as.double(base_viajes$INSE)
 
 
 ## Filtramos modoprincipal para quedarnos con los medios de transporte relevantes
@@ -46,7 +47,7 @@ base_viajes <- base_viajes %>%
 ## Creamos el dataframe con el ponderador
 
 viajes_svy <- base_viajes %>%
-  group_by(codsegorigen, codsegproposito, wcal0, tipo_vehiculo) %>%
+  group_by(codsegorigen, codsegproposito, wcal0, tipo_vehiculo, INSE) %>%
   summarize(cantidad_viajes = n()) %>% 
   as_survey_design(ids = NULL, strata = NULL, weights = wcal0)
 
@@ -56,11 +57,14 @@ viajes_svy <- base_viajes %>%
 tabla_origen_veh <- svytable(~codsegorigen + tipo_vehiculo, design = viajes_svy)
 view(tabla_origen_veh)
 
-tabla_origen_veh <- as.data.frame(tabla_origen_veh)
+origen_veh <- as.data.frame(tabla_origen_veh)
 
-ggplot(data = tabla_origen_veh, aes(x = tipo_vehiculo, y = log(Freq))) +
-  geom_bar(stat="identity", fill="steelblue")+
-  theme_minimal()
+ggplot(data = origen_veh, aes(x = tipo_vehiculo, y = log(Freq))) +
+  geom_col(stat="identity", width = 0.5, fill = "#fc8d62")+
+  theme_minimal() +
+  labs(title = "Distribución de medios de transporte en Montevideo") +
+  xlab("Tipo de Vehículo") +
+  ylab("Frecuencia (log)")
 
 ## ===========================================================================
 ## ===========================================================================
@@ -97,6 +101,33 @@ avenidas <- read_sf("Bases/avenidas")
 
 ## ===========================================================================
 ## ===========================================================================
+
+# Calcula los quintiles
+quintiles <- quantile(viajes_svy$INSE, probs = seq(0, 1, 0.2))
+
+viajes_svy$INSE <- as.numeric(viajes_svy$INSE)
+
+viajes_svy <- viajes_svy %>% na.omit()
+
+# Crear los quintiles y asignarlos a la columna 'quintil_INSE'
+viajes_svy <- viajes_svy %>%
+  mutate(quintil_INSE = cut(INSE, breaks = quantile(INSE, probs = 0:5/5), include.lowest = TRUE, labels = FALSE))
+
+# Agrupar por 'quintil_INSE' y calcular la suma de 'cantidad_viajes'
+resumen <- viajes_svy %>%
+  group_by(quintil_INSE) %>%
+  summarize(total_viajes = sum(cantidad_viajes))
+
+# Gráfico de barras
+ggplot(resumen, aes(x = factor(quintil_INSE), y = total_viajes)) +
+  geom_bar(stat = "identity", width = 0.5, fill = "#ffd92f") +
+  labs(title = "Viajes que realizan las personas por nivel socioeconómico",
+       x = "Quintil socioeconómico", y = "Cantidad de Viajes") +
+  theme_minimal()
+
+## ===========================================================================
+## ===========================================================================
+
 ## Graficamos Origen y Destino 
 
 ggplot() +
