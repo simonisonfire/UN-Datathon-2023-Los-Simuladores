@@ -35,11 +35,6 @@ pt1_sf <- st_set_crs(pt1_sf, st_crs(mapita_segmentos))
 
 rm(crs_utm, pt1_utm, pt1)
 
-ggplot() + 
-  geom_sf(data = mapita_segmentos, fill = "#e0ecf4") +
-  geom_sf(data = avenidas, color = "#9ebcda", size = 0.005) +
-  geom_sf(data = pt1_sf, color = "#8856a7")
-
 #======================================================================================
 # 2do dataframe con paradas de Tranvía
 # Ruta 2 - Punta de Rieles
@@ -70,11 +65,6 @@ pt2_sf <- st_as_sf(pt2_utm)
 pt2_sf <- st_set_crs(pt2_sf, st_crs(mapita_segmentos))
 
 rm(crs_utm, pt2_utm, pt2)
-
-ggplot() + 
-  geom_sf(data = mapita_segmentos, fill = "#e0ecf4") +
-  geom_sf(data = avenidas, color = "#9ebcda", size = 0.005) +
-  geom_sf(data = pt2_sf, color = "#8856a7")
 
 #======================================================================================
 # 3er dataframe con paradas de Tranvía
@@ -107,11 +97,6 @@ pt3_sf <- st_set_crs(pt3_sf, st_crs(mapita_segmentos))
 
 rm(crs_utm, pt3_utm, pt3)
 
-ggplot() + 
-  geom_sf(data = mapita_segmentos, fill = "#e0ecf4") +
-  geom_sf(data = avenidas, color = "#9ebcda", size = 0.005) +
-  geom_sf(data = pt3_sf, color = "#8856a7")
-
 #======================================================================================
 
 # 4to dataframe con paradas de Tranvía
@@ -140,11 +125,6 @@ pt4_sf <- st_as_sf(pt4_utm)
 pt4_sf <- st_set_crs(pt4_sf, st_crs(mapita_segmentos))
 
 rm(crs_utm, pt4_utm, pt4)
-
-ggplot() + 
-  geom_sf(data = mapita_segmentos, fill = "#e0ecf4") +
-  geom_sf(data = avenidas, color = "#9ebcda", size = 0.005) +
-  geom_sf(data = pt4_sf, color = "#8856a7")
 
 #======================================================================================
 #Trazado de rutas de tranvía
@@ -180,11 +160,6 @@ tlin3_sf <- st_sfc(st_linestring(coords))
 
 tlin3_sf <- st_set_crs(tlin3_sf, st_crs(mapita_segmentos))
 
-ggplot() + 
-  geom_sf(data = mapita_segmentos, fill = "#e0ecf4") +
-  geom_sf(data = avenidas, color = "#9ebcda", size = 0.005) +
-  geom_sf(data = tlin3_sf, color = "#8856a7", linewidth = 1.25)
-
 #======================================================================================
 #Manga
 tlong1 <- c(-34.80717, -34.82472, -34.82882, -34.86224, -34.86243, -34.86387, -34.87640,
@@ -216,11 +191,6 @@ coords <- st_coordinates(tlin1_sf)
 tlin1_sf <- st_sfc(st_linestring(coords))
 
 tlin1_sf <- st_set_crs(tlin1_sf, st_crs(mapita_segmentos))
-
-ggplot() + 
-  geom_sf(data = mapita_segmentos, fill = "#e0ecf4") +
-  geom_sf(data = avenidas, color = "#9ebcda", size = 0.005) +
-  geom_sf(data = tlin1_sf, color = "#8856a7", linewidth = 1.25)
 
 #======================================================================================
 #Punta de Rieles
@@ -256,11 +226,6 @@ tlin2_sf <- st_sfc(st_linestring(coords))
 
 tlin2_sf <- st_set_crs(tlin2_sf, st_crs(mapita_segmentos))
 
-ggplot() + 
-  geom_sf(data = mapita_segmentos, fill = "#e0ecf4") +
-  geom_sf(data = avenidas, color = "#9ebcda", size = 0.005) +
-  geom_sf(data = tlin2_sf, color = "#8856a7", linewidth = 1.25)
-
 #======================================================================================
 #Centro
 tlong4 <- c(-34.89420, -34.89927, -34.90255, -34.90513, -34.90546, -34.90644, -34.90648)
@@ -291,41 +256,29 @@ tlin4_sf <- st_sfc(st_linestring(coords))
 
 tlin4_sf <- st_set_crs(tlin4_sf, st_crs(mapita_segmentos))
 
-ggplot() + 
-  geom_sf(data = mapita_segmentos, fill = "#e0ecf4") +
-  geom_sf(data = avenidas, color = "#9ebcda", size = 0.005) +
-  geom_sf(data = tlin4_sf, color = "#8856a7", linewidth = 1.25)
-
 #======================================================================================
 
 ## MAPA DEL SISTEMA DE TRANVíAS DE MONTEVIDEO
-
-ggplot() + 
-  geom_sf(data = mapita_segmentos, fill = "#e0ecf4") +
-  geom_sf(data = avenidas, color = "#9ebcda", size = 0.005) +
-  geom_sf(data = tlin1_sf, color = "#fc8d62", linewidth = 2) +
-  geom_sf(data = tlin2_sf, color = "#e78ac3", linewidth = 2) +
-  geom_sf(data = tlin3_sf, color = "#a6d854", linewidth = 2) +
-  geom_sf(data = tlin4_sf, color = "#ffd92f", linewidth = 2) +
-  geom_jitter() +
-  labs(title = "Mapa del Sistema Tranviario de Montevideo") +
-  theme_minimal()
   
-# Define los nombres y colores de las líneas de tranvía
+# Definimos los nombres y colores de las líneas de tranvía
 lineas_tranvia <- c("Línea 1", "Línea 2", "Línea 3", "Línea 4")
 colores_lineas <- c("#fc8d62", "#e78ac3", "#a6d854", "#ffd92f")
 
-# Crea el gráfico
+# Creamos el gráfico
 
 ggplot() + 
   geom_sf(data = mapita_segmentos, color = "#9ebcda", fill = "#e0ecf4") +
   geom_sf(data = avenidas, color = "#95aabf", size = 0.005) +
-  geom_sf(data = tlin1_sf, aes(color = "Línea 1"), linewidth = 2) +
-  geom_sf(data = tlin2_sf, aes(color = "Línea 2"), linewidth = 2) +
-  geom_sf(data = tlin3_sf, aes(color = "Línea 3"), linewidth = 2) +
-  geom_sf(data = tlin4_sf, aes(color = "Línea 4"), linewidth = 2) +
-  scale_color_manual(values = colores_lineas, labels = lineas_tranvia) + 
+  geom_sf(data = tlin1_sf, aes(color = "Línea 1"), linewidth = 2.5) +
+  geom_sf(data = tlin2_sf, aes(color = "Línea 2"), linewidth = 2.5) +
+  geom_sf(data = tlin3_sf, aes(color = "Línea 3"), linewidth = 2.5) +
+  geom_sf(data = tlin4_sf, aes(color = "Línea 4"), linewidth = 2.5) +
+  scale_color_manual(values = colores_lineas, labels = lineas_tranvia) +
+  geom_sf(data = pt1_sf, color = "white", size = 0.75) +
+  geom_sf(data = pt2_sf, color = "white", size = 0.75) +
+  geom_sf(data = pt3_sf, color = "white", size = 0.75) +
+  geom_sf(data = pt4_sf, color = "white", size = 0.75) +
   labs(title = "Mapa del Sistema Tranviario de Montevideo") +
   theme_void() +
   theme(legend.position = "right") + 
-  labs(color = "Líneas de Tranvía")  
+  labs(color = "Líneas de Tranvía")

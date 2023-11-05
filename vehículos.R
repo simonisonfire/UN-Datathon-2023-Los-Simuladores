@@ -96,10 +96,13 @@ rm(crs_utm, resumen_vehiculos_utm, resumen_vehiculos)
 ggplot() + 
   geom_sf(data = mapita_segmentos, fill = "#e0ecf4") +
   geom_sf(data = avenidas, color = "#9ebcda", size = 0.005) +
-  geom_sf(data = resumen_vehiculos_sf, aes(size = total_volumen), color = "#8856a7", alpha = 0.05, shape = 21) +
-  geom_jitter() +
-  scale_size_continuous(range = c(2, 10)) +
-  labs(title = "Mapa de Burbujas de Cantidad de Vehículos")
+  geom_sf(data = resumen_vehiculos_sf, aes(size = total_volumen), color = "#8856a7", shape = 21) +
+  geom_jitter(width = 2.5, height = 2.5) +
+  scale_size_continuous(range = c(10, 10)) +
+  labs(title = "Mapa de Burbujas de Cantidad de Vehículos") +
+  theme_void() +
+  theme(legend.position = "right") + 
+  labs(color = "Volumen")
 
 # Creamos un shapefile con la información geocodificada
 

@@ -56,6 +56,12 @@ viajes_svy <- base_viajes %>%
 tabla_origen_veh <- svytable(~codsegorigen + tipo_vehiculo, design = viajes_svy)
 view(tabla_origen_veh)
 
+tabla_origen_veh <- as.data.frame(tabla_origen_veh)
+
+ggplot(data = tabla_origen_veh, aes(x = tipo_vehiculo, y = log(Freq))) +
+  geom_bar(stat="identity", fill="steelblue")+
+  theme_minimal()
+
 ## ===========================================================================
 ## ===========================================================================
 
@@ -91,19 +97,21 @@ avenidas <- read_sf("Bases/avenidas")
 
 ## ===========================================================================
 ## ===========================================================================
-## Graficamos Origen y Destino junto con las Avenidas y las Paradas de Bus
+## Graficamos Origen y Destino 
 
 ggplot() +
   geom_sf(data = mapita_segmentos, color = "lightblue") +
-  geom_sf(data = destino_data, aes(fill = median_viajes)) +
+  geom_sf(data = destino_data, aes(fill = median_viajes), color = "#95aabf") +
   scale_fill_gradient(low = "lightblue", high = "red", name = "Cantidad de Viajes") +
-  labs(title = "Mapa de Destinos de Viajes y Avenidas") +
-  geom_sf(data = avenidas, color = "black", alpha = 0.5, size = 0.005)
+  labs(title = "Mapa de Destinos de Viajes") +
+  geom_sf(data = avenidas, color = "#525152", alpha = 0.5, size = 0.005) +
+  theme_void()
 
 
 ggplot() +
   geom_sf(data = mapita_segmentos, color = "lightblue") +
-  geom_sf(data = origen_data, aes(fill = median_viajes)) +
+  geom_sf(data = origen_data, aes(fill = median_viajes), color = "#95aabf") +
   scale_fill_gradient(low = "lightblue", high = "red", name = "Cantidad de Viajes") +
   labs(title = "Mapa de Orígenes de Viajes") +
-  geom_sf(data = avenidas, color = "black", alpha = 0.5, size = 0.005)
+  geom_sf(data = avenidas, color = "#525152", alpha = 0.5, size = 0.005) +
+  theme_void()
