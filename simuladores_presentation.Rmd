@@ -1,0 +1,208 @@
+---
+title: "Tramways, a viable and sustainable option for Montevideo?"
+subtitle: "Los Simuladores"
+date: &nbsp <img src="rmd/ima/un-datathon.png" align="center" height="300px" />
+output:
+  xaringan::moon_reader:
+    css: ["xaringan-themer.css"]
+    lib_dir: libs
+    self_contained: yes
+    nature:
+      highlightStyle: github
+      countIncrementalSlides: false
+      incremental: true
+      df_print: kable  
+      smaller: true
+      widescreen: true
+      highlightLines: true
+
+---
+class: inverse, center, middle
+
+```{r setup, include=FALSE}
+library(xaringanthemer)
+library(kableExtra)
+library(xaringan)
+library(xaringanExtra)
+
+style_duo_accent(primary_color = "#ff8f44",
+                 secondary_color = "#ff8f44",
+                 text_font_family = "Droid Serif",
+                 text_font_url = "https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic",
+                 header_font_google = google_font("Yanone Kaffeesatz"),
+                 text_slide_number_color = "#000000")
+knitr::opts_chunk$set(
+	echo = FALSE,
+	error = FALSE,
+	warning = FALSE
+)
+options("kableExtra.html.bsTable" = T)
+
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i>",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #90BE6D\"></i>",
+    error_text = "<i class=\"fa fa-times-circle\" style=\"color: #F94144\"></i>"
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
+use_scribble()
+use_extra_styles(
+  hover_code_line = TRUE,         
+  mute_unhighlighted_code = TRUE
+  )  
+```
+# Los Simuladores
+---
+class: middle, center
+## We are a group of five people
+De los Santos, Diego
+
+Fernandez, Mateo
+
+Gimeno, Joaquín
+
+Herrera, Simon
+
+Terzano, Lorenzo
+
+We are undergraduate students of Political Science.
+We signed up for the Datathon because we are interested in data
+manipulation and with this event we believe it is a unique opportunity to
+gain new knowledge and above all experience.
+In addition, as future professionals, we believe that we must
+emphasize the implementation of public policies on environmental issues.
+So that our city has a sustainable development and that the objectives of
+the 2030 Agenda can be met.
+---
+class: inverse, center, middle
+## Introduction 
+---
+class: center, middle
+## Introduction
+
+We have detected that public transport in Montevideo has deficiencies due
+to high traffic that causes more delays than in any other country in the region and we have reached that the best solution to this problem would be the implementation of a tramway that reduces the number of private cars in circulation. Using as an example the thesis of Laura Garcia from the
+University of La Laguna.
+
+In addition, the streetcar would be powered by renewable energy, making it
+environmentally friendly and sustainable.
+---
+class: inverse, center, middle
+## Main Objectives
+---
+class: center, middle
+## Main objectives
+
+Improve mobility and improve traffic in the city.
+
+Complement public transportation.
+
+Reduce greenhouse gas emissions.
+
+Guarantee accessibility, democratizing urban mobility.
+
+Improve quality of life and urban environment.
+---
+class: inverse, center, middle
+## Specific objectives
+---
+class: center, middle
+## Specific objectives
+
+Achieving center-periphery connections in Montevideo.
+
+To reduce traffic congestion costs and times (IDB, 2021).
+
+Reduce the number of private vehicles.
+
+Make passenger travel times from residential to commercial or industrial areas more efficient.
+
+Reducing fossil fuels consumption and noise pollution
+---
+class: inverse, center, middle
+## Methodology
+---
+class: center, middle
+#Methodology
+
+-Lines of 3.23/8.4 kilometers, with a line frequency of 5 to 10 minutes, with stops every 500/800 meters (Furmaniak and Schurman 2016 in ["Julián Rodrigo Quintero González (2017)".](http://revistascientificas.filo.uba.ar/index.php/rtt/article/view/3873/3478)). Taken from "Environmental, social and economic benefits of streetcar and light rail: assessment of public policies in Colombia ["Julián Rodrigo Quintero González (2017)".](http://revistascientificas.filo.uba.ar/index.php/rtt/article/view/3873/3478)
+-Use Series 302 tramway model with 5 modules, capacity of 213 passengers, maximum speed of 70 km/h and possibility of receiving rail power supply.
+-We start from the assumption that the Av Italia tramway project would be approved, so we have 4 lines, 1) Manga, 2) Punta de Rieles, 3) La Teja and 4) Centro. We justify these lines due to population density, availability of main streets that can handle a streetcar without generating more inconvenience to traffic and are distributed to synergize with the metropolitan bus transport.
+-We chose the destination point at the AFE (Administración de Ferrocarriles del Estado) station because of its historical and cultural relevance and its use would mean a renovation of the Montevideo urban plan.
+---
+class: center, middle
+# [Inter-American Development Bank chart (2019)](https://publications.iadb.org/publications/spanish/viewer/Congestion-urbana-en-America-Latina-y-el-Caribe-Caracter%C3%ADsticas-costos-mitigacion.pdf)
+
+![](rmd/ima/tabla1_6.png)
+---
+class: center, middle
+# [Average emissions of different vehicles](https://riull.ull.es/xmlui/bitstream/handle/915/2733/ESTUDIO%20ECONOMICO-FINANCIERO%20DEL%20TRANVIA%20DE%20TENERIFE%20Y%20DE%20SUS%20EFECTOS%20SOBRE%20LA%20CONGESTION,%20LA%20CONTAMINACION%20Y%20EL%20COSTE%20DEL%20TIEMPO%20DEL%20VIAJE%20.pdf?sequence=1)
+
+![](rmd/ima/tabla_11_gallega.png)
+
+---
+class: center, middle
+# Vehicle exhaust emissions
+
+*"CO2 emissions turn out to be 50, 47 and 169 g/km/person for Bus, Motorcycle and Car respectively. That is to say that the CO2 emissions of transport by motorcycle and bus are similar and that circulation by car is 3 times higher.*["Nicolás Rezzano Tizze, 2015"](https://www.colibri.udelar.edu.uy/jspui/bitstrem/20.500.12008/35932/1/RDG15.pdf)
+
+# Definition of greenhouse gases
+
+*"The term refers to those gases that are naturally found in the atmosphere of the planet and are directly related to the increase in its temperature, due to their ability to absorb infrared radiation from the earth's surface produced by the sun's rays. These gases can remain on the surface of the planet for years and even decades. All human activities derived from the industrial era, produce this type of gases and it is due to this intervention that the temperature of the planet is affected and it was even calculated an increase of 0.9 degrees Celsius over the average of the twentieth century.*
+["(Minambiente, 2015)."](http://revistascientificas.filo.uba.ar/index.php/rtt/article/view/3873/3478)
+---
+class: middle, center
+#Evolution of GHG emissions in Montevideo from 2006 - 2021 (energy sector)
+
+![](rmd/ima/tabla_de_energia.png)
+---
+class: inverter, middle, center
+## Environmental justification
+---
+class: middle, center
+# Environmental justification
+
+The maximum speed of a streetcar is 70 km/h, power 720 W 360 kwh/km. We believe that in Montevideo this project is feasible since *"Uruguay is a leading country in the use of renewable energies in the world. Between 2017 and 2021 94% of Uruguay's electricity generation originated from renewable sources. In particular, the contribution of wind energy places Uruguay as a world leader along with Denmark, Ireland and Portugal."*["Uruguay XXI"](https://www.uruguayxxi.gub.uy/es/centro-informacion/articulo/energias-renovables/)
+
+Adding to this justification, the implementation of a streetcar would reduce the use of private vehicles that pollute more on average than buses, which account for a third of Montevideo's pollution. The tramway is also a long term and durable investment being a project that does not need changes, also facilitating the movement of people and workers decreasing travel times and costs produced by these. The cost per person caused by congestion is 117 USD and per passenger is 474 USD.["Economic-financial study of the tenerife tramway and its effects on congestion, pollution and travel time cost", Laura García Ramos Universidad la Laguna (2016)](https://riull.ull.es/xmlui/bitstream/handle/915/2733/ESTUDIO%20ECONOMICO-FINANCIERO%20DEL%20TRANVIA%20DE%20TENERIFE%20Y%20DE%20SUS%20EFECTOS%20SOBRE%20LA%20CONGESTION,%20LA%20CONTAMINACION%20Y%20EL%20COSTE%20DEL%20TIEMPO%20DEL%20VIAJE%20.pdf?sequence=1)/[ "Urban congestion in Latin America and the Caribbean: characteristics,costs and mitigation" IDB, Agustina Calatayud, et al (2021)](https://publications.iadb.org/publications/spanish/viewer/Congestion-urbana-en-America-Latina-y-el-Caribe-Caracter%C3%ADsticas-costos-mitigacion.pdf)/["Predefined Evaluating Criteria to Select the Best Tramway Route", Mahdi Ibrahim Thamer Alkubaisi, University of Anbar-Iraq (2014).](https://www.researchgate.net/publication/290153344_Predefined_Evaluating_Criteria_to_Select_the_Best_Tramway_Route)
+
+---
+class: middle, center
+## Effects of tramway implementation in Tenerife
+
+![](rmd/ima/tabla_7_gallega.png)
+
+[*Laura García Ramos (2016) University of La Laguna.*](https://riull.ull.es/xmlui/bitstream/handle/915/2733/ESTUDIO%20ECONOMICO-FINANCIERO%20DEL%20TRANVIA%20DE%20TENERIFE%20Y%20DE%20SUS%20EFECTOS%20SOBRE%20LA%20CONGESTION,%20LA%20CONTAMINACION%20Y%20EL%20COSTE%20DEL%20TIEMPO%20DEL%20VIAJE%20.pdf?sequence=1)
+---
+class: middle, center
+## Effects of tramway implementation in Tenerife: Can the same results be expected in Montevideo?
+
+Tenerife has a population of 949,471 (year 2019), the table shows that there was a 9% decrease in the use of private cars due to the implementation of the tramway ["Laura García Ramos (2016)".](https://riull.ull.es/xmlui/bitstream/handle/915/2733/ESTUDIO%20ECONOMICO-FINANCIERO%20DEL%20TRANVIA%20DE%20TENERIFE%20Y%20DE%20SUS%20EFECTOS%20SOBRE%20LA%20CONGESTION,%20LA%20CONTAMINACION%20Y%20EL%20COSTE%20DEL%20TIEMPO%20DEL%20VIAJE%20.pdf?sequence=1). We compared it with Montevideo since the population of Montevideo is 1,381,000 (2017) and can be compared with Tenerife.
+
+The number of cars circulating in Montevideo per year is 1,572,055, if we apply the same logic 141,485 cars per year would be removed from circulation, which means a reduction of 96,842 tons of CO2 per km per year [(Montevideo Observatory, 2022)](https://montevideo.gub.uy/sites/default/files/biblioteca/emisionesdecontaminantesportipodevehiculomotorizadoo_0.pdf)
+
+Approximately 6,000 would move per line per hour and line direction[(Catenary-Free TramwaySystems: Functional and Cost-Benefit Analysis for a Metropolitan Area,2019.](https://link.springer.com/article/10.1007/s40864-019-00118-y)
+---
+class: inverter, middle, center
+## Economic justification
+---
+class: middle, center
+## Economic justification
+
+![](rmd/ima/tabla_2_gallega.png) 
+
+A tramway investment has very high
+initial capital costs, however it is a long term project that has both economic and social benefits. The average cost per km of a streetcar line being 13,018,094 /26,035,227 USD, per km being 14.3 million USD.[Environmental, social and environmental benefits tramway and light rail (2021)](http://revistascientificas.filo.uba.ar/index.php/rtt/article/view/3873/3478)
+
+The implementation of a tramway would mean a reduction in people's living costs, by eliminating maintenance and fuel costs for vehicle owners, but even if they do not change their method of transportation, it would mean a speeding up of traffic, reducing fuel consumption and fewer accidents on roadways. ["The cost per person congestion is 117 USD and per passenger rises to 474 USD." Urban congestion in Latin America and the Caribbean: characteristics, costs and mitigation, Inter-American Development Bank 2021.](https://publications.iadb.org/publications/spanish/viewer/Congestion-urbana-en-America-Latina-y-el-Caribe-Caracter%C3%ADsticas-costos-mitigacion.pdf)
+---
+class: inverter, middle, center
+## Conclusions
+---
+class: middle, center
+## Conclusions
+
+The tramway provides different solutions to different problems, such as climate change, since it would reduce CO2 emissions as demonstrated in the work of Laura García Ramos, but with the particularity that the tramway in Montevideo would use 100% renewable energy sources.
+On the other hand, it would solve congestion problems and facilitate mobility within the city (Montevideo being the worst city in LATAM in terms of mobility), also reducing road traffic accidents.
