@@ -303,10 +303,10 @@ ggplot() +
 ggplot() + 
   geom_sf(data = mapita_segmentos, fill = "#e0ecf4") +
   geom_sf(data = avenidas, color = "#9ebcda", size = 0.005) +
-  geom_sf(data = tlin1_sf, color = "#fc8d62", linewidth = 1.25) +
-  geom_sf(data = tlin2_sf, color = "#e78ac3", linewidth = 1.25) +
-  geom_sf(data = tlin3_sf, color = "#a6d854", linewidth = 1.25) +
-  geom_sf(data = tlin4_sf, color = "#ffd92f", linewidth = 1.25) +
+  geom_sf(data = tlin1_sf, color = "#fc8d62", linewidth = 1.5) +
+  geom_sf(data = tlin2_sf, color = "#e78ac3", linewidth = 1.5) +
+  geom_sf(data = tlin3_sf, color = "#a6d854", linewidth = 1.5) +
+  geom_sf(data = tlin4_sf, color = "#ffd92f", linewidth = 1.5) +
   labs(title = "Mapa del Sistema Tranviario de Montevideo") +
   theme_minimal()
   
