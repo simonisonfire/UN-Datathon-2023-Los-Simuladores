@@ -311,3 +311,20 @@ ggplot() +
   labs(title = "Mapa del Sistema Tranviario de Montevideo") +
   theme_minimal()
   
+# Define los nombres y colores de las líneas de tranvía
+lineas_tranvia <- c("Línea 1", "Línea 2", "Línea 3", "Línea 4")
+colores_lineas <- c("#fc8d62", "#e78ac3", "#a6d854", "#ffd92f")
+
+# Crea el gráfico
+ggplot() + 
+  geom_sf(data = mapita_segmentos, fill = "#e0ecf4") +
+  geom_sf(data = avenidas, color = "#9ebcda", size = 0.005) +
+  geom_sf(data = tlin1_sf, aes(color = "Línea 1"), linewidth = 2) +
+  geom_sf(data = tlin2_sf, aes(color = "Línea 2"), linewidth = 2) +
+  geom_sf(data = tlin3_sf, aes(color = "Línea 3"), linewidth = 2) +
+  geom_sf(data = tlin4_sf, aes(color = "Línea 4"), linewidth = 2) +
+  scale_color_manual(values = colores_lineas, labels = lineas_tranvia) +  # Define la escala de color y etiquetas
+  labs(title = "Mapa del Sistema Tranviario de Montevideo") +
+  theme_minimal() +
+  theme(legend.position = "right") +  # Coloca la leyenda a la derecha
+  labs(color = "Línea de Tranvía")  # Cambia el título de la leyenda
