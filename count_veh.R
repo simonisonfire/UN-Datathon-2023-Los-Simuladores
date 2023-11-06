@@ -105,8 +105,8 @@ vehicle_summary_sf <- vehicle_summary_sf %>%
 
 ggplot() + 
   geom_sf(data = mapita_segments, color = "#9ebcda", fill = "#e0ecf4") +
-  geom_sf(data = avenidas, color = "#95aabf", size = 0.005) +
-  geom_sf(data = vehicle_summary_sf, aes(size = total_volume),
+  geom_sf(data = avenues, color = "#95aabf", size = 0.005) +
+  geom_sf(data = vehicle_summary_sf, aes(size = ttl_vlm),
           color = "#8856a7", shape = 21) +
   geom_jitter(width = 20, height = 70) +
   scale_size_continuous(range = c(1.7, 7)) +

@@ -32,7 +32,7 @@ pt1_utm <- spTransform(pt1, crs_utm)
 
 pt1_sf <- st_as_sf(pt1_utm)
 
-pt1_sf <- st_set_crs(pt1_sf, st_crs(mapita_segmentos))
+pt1_sf <- st_set_crs(pt1_sf, st_crs(mapita_segments))
 
 rm(crs_utm, pt1_utm, pt1)
 
@@ -63,7 +63,7 @@ pt2_utm <- spTransform(pt2, crs_utm)
 
 pt2_sf <- st_as_sf(pt2_utm)
 
-pt2_sf <- st_set_crs(pt2_sf, st_crs(mapita_segmentos))
+pt2_sf <- st_set_crs(pt2_sf, st_crs(mapita_segments))
 
 rm(crs_utm, pt2_utm, pt2)
 
@@ -94,7 +94,7 @@ pt3_utm <- spTransform(pt3, crs_utm)
 
 pt3_sf <- st_as_sf(pt3_utm)
 
-pt3_sf <- st_set_crs(pt3_sf, st_crs(mapita_segmentos))
+pt3_sf <- st_set_crs(pt3_sf, st_crs(mapita_segments))
 
 rm(crs_utm, pt3_utm, pt3)
 
@@ -123,7 +123,7 @@ pt4_utm <- spTransform(pt4, crs_utm)
 
 pt4_sf <- st_as_sf(pt4_utm)
 
-pt4_sf <- st_set_crs(pt4_sf, st_crs(mapita_segmentos))
+pt4_sf <- st_set_crs(pt4_sf, st_crs(mapita_segments))
 
 rm(crs_utm, pt4_utm, pt4)
 
@@ -159,7 +159,7 @@ coords <- st_coordinates(tlin3_sf)
 
 tlin3_sf <- st_sfc(st_linestring(coords))
 
-tlin3_sf <- st_set_crs(tlin3_sf, st_crs(mapita_segmentos))
+tlin3_sf <- st_set_crs(tlin3_sf, st_crs(mapita_segments))
 
 # Manga
 tlong1 <- c(-34.80717, -34.82472, -34.82882, -34.86224, -34.86243, -34.86387, -34.87640,
@@ -190,7 +190,7 @@ coords <- st_coordinates(tlin1_sf)
 
 tlin1_sf <- st_sfc(st_linestring(coords))
 
-tlin1_sf <- st_set_crs(tlin1_sf, st_crs(mapita_segmentos))
+tlin1_sf <- st_set_crs(tlin1_sf, st_crs(mapita_segments))
 
 # Punta de Rieles
 tlong2 <- c(-34.85568, -34.85748, -34.86600, -34.87148, -34.87285, -34.88380, -34.88719,
@@ -223,7 +223,7 @@ coords <- st_coordinates(tlin2_sf)
 
 tlin2_sf <- st_sfc(st_linestring(coords))
 
-tlin2_sf <- st_set_crs(tlin2_sf, st_crs(mapita_segmentos))
+tlin2_sf <- st_set_crs(tlin2_sf, st_crs(mapita_segments))
 
 # Centro
 tlong4 <- c(-34.89420, -34.89927, -34.90255, -34.90513, -34.90546, -34.90644, -34.90648)
@@ -252,7 +252,7 @@ coords <- st_coordinates(tlin4_sf)
 
 tlin4_sf <- st_sfc(st_linestring(coords))
 
-tlin4_sf <- st_set_crs(tlin4_sf, st_crs(mapita_segmentos))
+tlin4_sf <- st_set_crs(tlin4_sf, st_crs(mapita_segments))
 
 # ===========================================================================
 
@@ -263,7 +263,7 @@ lineas_tranvia <- c("Line 1", "Line 2", "Line 3", "Line 4")
 colores_lineas <- c("#fc8d62", "#e78ac3", "#a6d854", "#ffd92f")
 
 ggplot() + 
-  geom_sf(data = mapita_segmentos, color = "#9ebcda", fill = "#e0ecf4") +
+  geom_sf(data = mapita_segments, color = "#9ebcda", fill = "#e0ecf4") +
   geom_sf(data = avenidas, color = "#95aabf", size = 0.005) +
   geom_sf(data = tlin1_sf, aes(color = "Line 1"), linewidth = 2.5) +
   geom_sf(data = tlin2_sf, aes(color = "Line 2"), linewidth = 2.5) +
