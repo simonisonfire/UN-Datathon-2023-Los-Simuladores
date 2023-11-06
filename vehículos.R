@@ -129,10 +129,3 @@ ggplot(vehiculos_hora, aes(x = hora, y = mean_total_volumen, fill = fecha)) +
   labs(title = "Cantidad de Vehículos por Hora del Día", x = "Hora del Día", y = "Total de Vehículos") +
   theme_minimal() +
   theme(legend.title = element_blank())
-
-
-
-
-
-
-
