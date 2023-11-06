@@ -199,16 +199,17 @@ class: center, middle
 -We chose the destination point at the AFE (Administración de Ferrocarriles del Estado) station because of its historical and cultural relevance and its use would mean a renovation of the Montevideo urban plan.
 ---
 class: middle, center
-```{r dens_p, echo=FALSE}
+```{r dens_p, echo=FALSE, dpi=200}
 ggplot(data = mapita_segments) +  
   geom_sf(aes(fill = median_DENS_P)) +
   scale_fill_gradient(low = "lightblue", high = "red") +
-  ggtitle(label = "Median Population Density by Census Segment")
+  ggtitle(label = "Median Population Density by Census Segment") +
+  theme_void()
 
 ```
 ---
 class: center, middle
-```{r destiny, echo=FALSE}
+```{r destiny, echo=FALSE, dpi=200}
 
 destination_trips <- travel_survey %>%
   group_by(codsegproposito) %>%
@@ -293,7 +294,7 @@ ggplot(hourly_vehicles, aes(x = hora, y = mean_total_volume, fill = fecha)) +
 ```
 ---
 class: center, middle
-```{r vehicle2, echo=FALSE, message=FALSE, warning=FALSE}
+```{r vehicle2, echo=FALSE, message=FALSE, warning=FALSE, dpi=200}
 ggplot() + 
   geom_sf(data = mapita_segments, color = "#9ebcda", fill = "#e0ecf4") +
   geom_sf(data = avenues, color = "#95aabf", size = 0.005) +
@@ -386,7 +387,7 @@ class: inverter, middle, center
 ## Conclusions
 ---
 class: middle, center
-```{r finally_tramways, echo=FALSE, message=FALSE, warning=FALSE}
+```{r finally_tramways, echo=FALSE, message=FALSE, warning=FALSE, dpi=200}
 
 # ===========================================================================
 # 1st data frame with Tram stops
