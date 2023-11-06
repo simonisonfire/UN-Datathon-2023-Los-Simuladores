@@ -9,6 +9,10 @@ library(tidyverse)
 ## ===========================================================================
 ## ===========================================================================
 
+## Create an object containing the main avenues of Montevideo
+
+avenues <- read_sf("Bases/avenidas")
+
 # Create a data frame with bus routes in Montevideo
 
 bus_routes <- read_sf("Bases/v_uptu_lsv")

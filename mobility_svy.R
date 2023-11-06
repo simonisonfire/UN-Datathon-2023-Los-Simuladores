@@ -92,10 +92,6 @@ destination_data <- merge(mapita_segments, destination_trips, by.x = "CODSEG", b
 
 origin_data <- merge(mapita_segments, origin_trips, by.x = "CODSEG", by.y = "codsegorigen")
 
-## Create an object containing the main avenues of Montevideo
-
-avenues <- read_sf("Bases/avenidas")
-
 ## ===========================================================================
 ## ===========================================================================
 
