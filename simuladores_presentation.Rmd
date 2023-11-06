@@ -193,14 +193,13 @@ class: inverse, center, middle
 class: center, middle
 #Methodology
 
--Lines of 3.23/8.4 kilometers, with a line frequency of 5 to 10 minutes, with stops every 500/800 meters (Furmaniak and Schurman 2016 in ["Julián Rodrigo Quintero González (2017)".](http://revistascientificas.filo.uba.ar/index.php/rtt/article/view/3873/3478)). Taken from "Environmental, social and economic benefits of streetcar and light rail: assessment of public policies in Colombia ["Julián Rodrigo Quintero González (2017)".](http://revistascientificas.filo.uba.ar/index.php/rtt/article/view/3873/3478)
--Use Series 302 tramway model with 5 modules, capacity of 213 passengers, maximum speed of 70 km/h and possibility of receiving rail power supply.
--We start from the assumption that the Av Italia tramway project would be approved, so we have 4 lines, 1) Manga, 2) Punta de Rieles, 3) La Teja and 4) Centro. We justify these lines due to population density, availability of main streets that can handle a streetcar without generating more inconvenience to traffic and are distributed to synergize with the metropolitan bus transport.
--We chose the destination point at the AFE (Administración de Ferrocarriles del Estado) station because of its historical and cultural relevance and its use would mean a renovation of the Montevideo urban plan.
+With regards to methodolgy, we started by revising some of the most recent literature on the topic of tramway systems. We found that "lines of 3.2 to 8.4 kilometers, with a line frequency of 5 to 10 minutes, with stops every 500 to 800 meters" (Furmaniak and Schurman in ["Julián Rodrigo Quintero González (2017)".](http://revistascientificas.filo.uba.ar/index.php/rtt/article/view/3873/3478)) are the most efficient. Also based on that, we used as a reference the Series 302 tramway model with 5 modules, a capacity of 213 passengers, with a maximum speed of 70 km/h and the possibility of receiving direct rail power.
+
+We started from the assumption that the Ciudad de la Costa tramway project would progress as has recently been approved. We, as will be seen further on, traced 4 lines, 1) Manga, 2) Punta de Rieles, 3) La Teja and 4) Centro. We justify these lines due to population density, availability of main avenues that can handle streetcars without generating significant inconvenience to traffic and we evenly distributed them in synergy with the metropolitan system of transportation. We chose the location for the main station at the AFE (Administración de Ferrocarriles del Estado) Estación Central Gral. Artigas because of its historical and cultural relevance. Its use would entail bringing life back to a forgotten area, as well as help bring people back to the center of the Montevideo urban plan.
 ---
 class: middle, center
-```{r dens_p, echo=FALSE, dpi=200}
-ggplot(data = mapita_segments) +  
+```{r dens_p, echo=FALSE, dpi=400}
+ggplot(data = mapita_segments, color = "lightblue") +  
   geom_sf(aes(fill = median_DENS_P)) +
   scale_fill_gradient(low = "lightblue", high = "red") +
   ggtitle(label = "Median Population Density by Census Segment") +
@@ -209,7 +208,7 @@ ggplot(data = mapita_segments) +
 ```
 ---
 class: center, middle
-```{r destiny, echo=FALSE, dpi=200}
+```{r destiny, echo=FALSE, dpi=400}
 
 destination_trips <- travel_survey %>%
   group_by(codsegproposito) %>%
@@ -248,14 +247,9 @@ class: inverter, middle, center
 class: middle, center
 # Environmental justification
 
-The maximum speed of a streetcar is 70 km/h, power 720 W 360 kwh/km. We believe that in Montevideo this project is feasible since *"Uruguay is a leading country in the use of renewable energies in the world. Between 2017 and 2021 94% of Uruguay's electricity generation originated from renewable sources. In particular, the contribution of wind energy places Uruguay as a world leader along with Denmark, Ireland and Portugal."*["Uruguay XXI"](https://www.uruguayxxi.gub.uy/es/centro-informacion/articulo/energias-renovables/)
+The maximum speed of a streetcar is 70 km/h, with a power of 720 W, consuming some 360 kwh/km. We believe that in Montevideo this project is feasible since *"Uruguay is a leading country in the use of renewable energies in the world. Between 2017 and 2021 94% of Uruguay's electricity generation originated from renewable sources. In particular, the contribution of wind energy places Uruguay as a world leader along with Denmark, Ireland and Portugal."*["Uruguay XXI"](https://www.uruguayxxi.gub.uy/es/centro-informacion/articulo/energias-renovables/)
 
-Adding to this justification, the implementation of a streetcar would reduce the use of private vehicles that pollute more on average than buses, which account for a third of Montevideo's pollution. The tramway is also a long term and durable investment being a project that does not need changes, also facilitating the movement of people and workers decreasing travel times and costs produced by these. The cost per person caused by congestion is 117 USD and per passenger is 474 USD.["Economic-financial study of the tenerife tramway and its effects on congestion, pollution and travel time cost", Laura García Ramos Universidad la Laguna (2016)](https://riull.ull.es/xmlui/bitstream/handle/915/2733/ESTUDIO%20ECONOMICO-FINANCIERO%20DEL%20TRANVIA%20DE%20TENERIFE%20Y%20DE%20SUS%20EFECTOS%20SOBRE%20LA%20CONGESTION,%20LA%20CONTAMINACION%20Y%20EL%20COSTE%20DEL%20TIEMPO%20DEL%20VIAJE%20.pdf?sequence=1)/[ "Urban congestion in Latin America and the Caribbean: characteristics,costs and mitigation" IDB, Agustina Calatayud, et al (2021)](https://publications.iadb.org/publications/spanish/viewer/Congestion-urbana-en-America-Latina-y-el-Caribe-Caracter%C3%ADsticas-costos-mitigacion.pdf)/["Predefined Evaluating Criteria to Select the Best Tramway Route", Mahdi Ibrahim Thamer Alkubaisi, University of Anbar-Iraq (2014).](https://www.researchgate.net/publication/290153344_Predefined_Evaluating_Criteria_to_Select_the_Best_Tramway_Route)
----
-class: center, middle
-# [Inter-American Development Bank chart (2019)](https://publications.iadb.org/publications/spanish/viewer/Congestion-urbana-en-America-Latina-y-el-Caribe-Caracter%C3%ADsticas-costos-mitigacion.pdf)
-
-![](rmd/ima/tabla1_6.png)
+Adding to this justification, the implementation of a streetcar would reduce the use of private vehicles that pollute more on average than buses, which account for a third of Montevideo's pollution. The tramway is also a long term and durable investment being a project that does not need changes, also facilitating the movement of people and workers decreasing travel times and the costs produced by these. The cost per person caused by congestion is 117 USD and about 474 USD for each driver.["Economic-financial study of the tenerife tramway and its effects on congestion, pollution and travel time cost", Laura García Ramos Universidad la Laguna (2016)](https://riull.ull.es/xmlui/bitstream/handle/915/2733/ESTUDIO%20ECONOMICO-FINANCIERO%20DEL%20TRANVIA%20DE%20TENERIFE%20Y%20DE%20SUS%20EFECTOS%20SOBRE%20LA%20CONGESTION,%20LA%20CONTAMINACION%20Y%20EL%20COSTE%20DEL%20TIEMPO%20DEL%20VIAJE%20.pdf?sequence=1)/[ "Urban congestion in Latin America and the Caribbean: characteristics,costs and mitigation" IDB, Agustina Calatayud, et al (2021)](https://publications.iadb.org/publications/spanish/viewer/Congestion-urbana-en-America-Latina-y-el-Caribe-Caracter%C3%ADsticas-costos-mitigacion.pdf)/["Predefined Evaluating Criteria to Select the Best Tramway Route", Mahdi Ibrahim Thamer Alkubaisi, University of Anbar-Iraq (2014).](https://www.researchgate.net/publication/290153344_Predefined_Evaluating_Criteria_to_Select_the_Best_Tramway_Route)
 ---
 class: center, middle
 ```{r mobility, echo=FALSE, message=FALSE, warning=FALSE}
@@ -294,7 +288,7 @@ ggplot(hourly_vehicles, aes(x = hora, y = mean_total_volume, fill = fecha)) +
 ```
 ---
 class: center, middle
-```{r vehicle2, echo=FALSE, message=FALSE, warning=FALSE, dpi=200}
+```{r vehicle2, echo=FALSE, message=FALSE, warning=FALSE, dpi=400}
 ggplot() + 
   geom_sf(data = mapita_segments, color = "#9ebcda", fill = "#e0ecf4") +
   geom_sf(data = avenues, color = "#95aabf", size = 0.005) +
@@ -387,7 +381,7 @@ class: inverter, middle, center
 ## Conclusions
 ---
 class: middle, center
-```{r finally_tramways, echo=FALSE, message=FALSE, warning=FALSE, dpi=200}
+```{r finally_tramways, echo=FALSE, message=FALSE, warning=FALSE, dpi=400}
 
 # ===========================================================================
 # 1st data frame with Tram stops
@@ -643,8 +637,8 @@ tlin4_sf <- st_set_crs(tlin4_sf, st_crs(mapita_segments))
 ## MONTEVIDEO TRAM SYSTEM MAP
 
 # Define tram line names and colors
-lineas_tranvia <- c("Line 1", "Line 2", "Line 3", "Line 4")
-colores_lineas <- c("#fc8d62", "#e78ac3", "#a6d854", "#ffd92f")
+tram_lines <- c("Line 1", "Line 2", "Line 3", "Line 4")
+line_colors <- c("#fc8d62", "#e78ac3", "#a6d854", "#ffd92f")
 
 ggplot() + 
   geom_sf(data = mapita_segments, color = "#9ebcda", fill = "#e0ecf4") +
@@ -653,7 +647,7 @@ ggplot() +
   geom_sf(data = tlin2_sf, aes(color = "Line 2"), linewidth = 2.5) +
   geom_sf(data = tlin3_sf, aes(color = "Line 3"), linewidth = 2.5) +
   geom_sf(data = tlin4_sf, aes(color = "Line 4"), linewidth = 2.5) +
-  scale_color_manual(values = colores_lineas, labels = lineas_tranvia) +
+  scale_color_manual(values = line_colors, labels = tram_lines) +
   geom_sf(data = pt1_sf, color = "white", size = 0.75) +
   geom_sf(data = pt2_sf, color = "white", size = 0.75) +
   geom_sf(data = pt3_sf, color = "white", size = 0.75) +
@@ -670,3 +664,19 @@ class: middle, center
 
 The tramway provides different solutions to different problems, such as climate change, since it would reduce CO2 emissions as demonstrated in the work of Laura García Ramos, but with the particularity that the tramway in Montevideo would use 100% renewable energy sources.
 On the other hand, it would solve congestion problems and facilitate mobility within the city (Montevideo being the worst city in LATAM in terms of mobility), also reducing road traffic accidents.
+
+---
+## Data sources
+
+- [2011 census data](https://geoweb.montevideo.gub.uy/geonetwork/srv/spa/catalog.search#/metadata/e3140ca2-21f0-4a9d-9be5-4da416c3ab23)
+- [Bus routes](https://geoweb.montevideo.gub.uy/geonetwork/srv/spa/catalog.search#/metadata/307ffef2-7ba3-4935-815b-caa7057226ce)
+- [Bus stops](https://geoweb.montevideo.gub.uy/geonetwork/srv/spa/catalog.search#/metadata/c6ea0476-9804-424a-9fae-2ac8ce2eee31)
+- [Avenues](https://geoweb.montevideo.gub.uy/geonetwork/srv/spa/catalog.search#/metadata/6d936134-ed9b-4283-a1d8-c864baf0128a)
+- [Origin - destiny mobility survey](https://ckan.montevideo.gub.uy/dataset/encuesta-origen-destino-montevideo)
+- [Vehicle count](https://catalogodatos.gub.uy/dataset/intendencia-montevideo-conteo-de-vehiculos-del-centro-de-gestion-de-la-movilidad/resource/114ce728-40b2-4ecd-9d43-eaa5e183456b)
+---
+class: middle
+## Special thanks
+- [Fabricio Carneiro](https://github.com/Fabricio-Carneiro) & [Martín Opertti](https://github.com/martinopertti), Professors @ Udelar Uruguay.
+- [Gonzalo Márquez](https://twitter.com/GonzaMarquez_uy), former Director of Transit @ Intendencia de Montevideo.
+---

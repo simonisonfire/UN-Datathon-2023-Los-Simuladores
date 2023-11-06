@@ -71,10 +71,10 @@ ggplot(vehicle_summary, aes(x = hora, y = weekday, fill = total_volume)) +
   labs(title = "Vehicle Count by Hour and Day of the Week",
        x = "Hour of the Day", y = "Day of the Week")
 
-# Specify the file path where you want to save the CSV file
+# We specify the path to save
 file_path <- "Bases/conteo_veh_set23/vehicle_summary.csv"
 
-# Use write.csv to write the data frame to a CSV file
+# Use write.csv to write the data frame to a CSV file (count_veh is too heavy)
 write.csv(vehicle_summary, file = file_path, row.names = FALSE)
 
 ## ===========================================================================
@@ -106,7 +106,7 @@ vehicle_summary_sf <- vehicle_summary_sf %>%
 ggplot() + 
   geom_sf(data = mapita_segments, color = "#9ebcda", fill = "#e0ecf4") +
   geom_sf(data = avenues, color = "#95aabf", size = 0.005) +
-  geom_sf(data = vehicle_summary_sf, aes(size = ttl_vlm),
+  geom_sf(data = vehicle_summary_sf, aes(size = total_volume),
           color = "#8856a7", shape = 21) +
   geom_jitter(width = 20, height = 70) +
   scale_size_continuous(range = c(1.7, 7)) +
@@ -122,6 +122,8 @@ st_write(vehicle_summary_sf, "Bases/conteo_veh_set23/count_veh.shp")
 
 ## ===========================================================================
 ## ===========================================================================
+
+vehicle_summary <- read.table("Bases/conteo_veh_set23/vehicle_summary.csv", header = T, sep = ",")
 
 # Group by hour and day and calculate the mean of vehicles for each hour and day
 hourly_vehicles <- vehicle_summary %>%
