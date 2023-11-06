@@ -71,6 +71,12 @@ ggplot(vehicle_summary, aes(x = hora, y = weekday, fill = total_volume)) +
   labs(title = "Vehicle Count by Hour and Day of the Week",
        x = "Hour of the Day", y = "Day of the Week")
 
+# Specify the file path where you want to save the CSV file
+file_path <- "Bases/conteo_veh_set23/vehicle_summary.csv"
+
+# Use write.csv to write the data frame to a CSV file
+write.csv(vehicle_summary, file = file_path, row.names = FALSE)
+
 ## ===========================================================================
 ## ===========================================================================
 

@@ -173,63 +173,12 @@ class: center, middle
 # [Inter-American Development Bank chart (2019)](https://publications.iadb.org/publications/spanish/viewer/Congestion-urbana-en-America-Latina-y-el-Caribe-Caracter%C3%ADsticas-costos-mitigacion.pdf)
 
 ![](rmd/ima/tabla1_6.png)
+---
+class: middle, center
+```{r Vehicle_Summary, echo=FALSE, message=FALSE, warning=FALSE}
 
-
-```{r, echo=FALSE}
-count_veh <- read.table("Bases/conteo_veh_set23/autoscope_09_2023_volumen.csv", header = TRUE, sep = ",")
-
-count_veh <- count_veh %>% 
-  select(cod_detector, fecha, hora, latitud, longitud, volume, dsc_avenida) %>% 
-  group_by(cod_detector) %>% 
-  reframe(fecha, hora, latitud, longitud, volume, dsc_avenida) 
-
-vehicle_summary <- count_veh %>%
-  group_by(cod_detector, hora, fecha, latitud, longitud, dsc_avenida) %>%
-  reframe(total_volume = sum(volume))
-rm(count_veh)
-
-vehicle_summary <- vehicle_summary %>%
-  mutate(hora = as.POSIXct(hora, format = "%H:%M:%S")) %>% 
-  mutate(hora = format(hora, format = "%H"))
-
-vehicle_summary <- vehicle_summary %>%   
-  mutate(fecha = as.Date(fecha)) %>% 
-  mutate(week = format(fecha, "%W"))
-
-vehicle_summary <- vehicle_summary %>% 
-  mutate(weekday = weekdays(fecha))
-vehicle_summary <- filter(vehicle_summary, week == 36)
-
-day_order <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
-
-vehicle_summary <- as.data.frame(vehicle_summary)
-vehicle_summary$weekday <- as_factor(vehicle_summary$weekday)
-
-vehicle_summary <- vehicle_summary %>% 
-  arrange(factor(weekday, levels = day_order)) %>% 
-  filter(!is.na(weekday)) %>% 
-  filter(!is.na(total_volume)) %>% 
-  filter(!is.na(latitud)) %>% 
-  filter(!is.na(longitud)) %>% 
-  filter(!is.na(fecha)) %>% 
-  filter(!is.na(hora)) %>% 
-  filter(!is.na(cod_detector))
-
-coordinates(vehicle_summary) <- c("longitud", "latitud")
-proj4string(vehicle_summary) <- CRS("+proj=longlat +datum=WGS84 +no_defs")
-
-crs_utm <- CRS("+proj=utm +zone=21 +south +datum=WGS84 +units=m +no_defs")
-
-vehicle_summary_utm <- spTransform(vehicle_summary, crs_utm)
-
-vehicle_summary_sf <- st_as_sf(vehicle_summary_utm)
-
-vehicle_summary_sf <- st_set_crs(vehicle_summary_sf, st_crs(mapita_segments))
-
-rm(crs_utm, vehicle_summary_utm, vehicle_summary)
-
-vehicle_summary_sf <- vehicle_summary_sf %>% 
-  filter(!total_volume == 0)
+vehicle_summary_sf <- read_sf("Bases/conteo_veh_set23")
+vehicle_summary <- read.table("Bases/conteo_veh_set23/vehicle_summary.csv", header = T, sep = ",")
 
 hourly_vehicles <- vehicle_summary %>%
   group_by(hora, fecha) %>%
@@ -240,6 +189,7 @@ ggplot(hourly_vehicles, aes(x = hora, y = mean_total_volume, fill = fecha)) +
   labs(title = "Vehicle Count by Hour of the Day", x = "Hour of the Day", y = "Total Vehicles") +
   theme_minimal() +
   theme(legend.title = element_blank())
+
 
 ```
 ---
