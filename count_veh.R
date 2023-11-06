@@ -23,6 +23,8 @@ vehicle_summary <- count_veh %>%
   group_by(cod_detector, hora, fecha, latitud, longitud, dsc_avenida) %>%
   reframe(total_volume = sum(volume))
 
+rm(count_veh)
+
 # Adjust the format and aggregate by hour
 
 vehicle_summary <- vehicle_summary %>%
@@ -40,7 +42,6 @@ vehicle_summary <- vehicle_summary %>%
 vehicle_summary <- vehicle_summary %>% 
   mutate(weekday = weekdays(fecha))
 
-rm(count_veh)
 
 vehicle_summary <- filter(vehicle_summary, week == 36)
 
@@ -87,7 +88,7 @@ vehicle_summary_utm <- spTransform(vehicle_summary, crs_utm)
 
 vehicle_summary_sf <- st_as_sf(vehicle_summary_utm)
 
-vehicle_summary_sf <- st_set_crs(vehicle_summary_sf, st_crs(mapita_segmentos))
+vehicle_summary_sf <- st_set_crs(vehicle_summary_sf, st_crs(mapita_segments))
 
 rm(crs_utm, vehicle_summary_utm, vehicle_summary)
 
@@ -97,7 +98,7 @@ vehicle_summary_sf <- vehicle_summary_sf %>%
   filter(!total_volume == 0)
 
 ggplot() + 
-  geom_sf(data = mapita_segmentos, color = "#9ebcda", fill = "#e0ecf4") +
+  geom_sf(data = mapita_segments, color = "#9ebcda", fill = "#e0ecf4") +
   geom_sf(data = avenidas, color = "#95aabf", size = 0.005) +
   geom_sf(data = vehicle_summary_sf, aes(size = total_volume),
           color = "#8856a7", shape = 21) +
@@ -112,7 +113,6 @@ ggplot() +
 
 st_write(vehicle_summary_sf, "Bases/conteo_veh_set23/count_veh.shp")
 
-count_geo <- read_sf("Bases/conteo_veh_set23/count_veh.shp")
 
 ## ===========================================================================
 ## ===========================================================================
