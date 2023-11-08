@@ -264,7 +264,7 @@ colores_lineas <- c("#fc8d62", "#e78ac3", "#a6d854", "#ffd92f")
 
 ggplot() + 
   geom_sf(data = mapita_segments, color = "#9ebcda", fill = "#e0ecf4") +
-  geom_sf(data = avenidas, color = "#95aabf", size = 0.005) +
+  geom_sf(data = avenues, color = "#95aabf", size = 0.005) +
   geom_sf(data = tlin1_sf, aes(color = "Line 1"), linewidth = 2.5) +
   geom_sf(data = tlin2_sf, aes(color = "Line 2"), linewidth = 2.5) +
   geom_sf(data = tlin3_sf, aes(color = "Line 3"), linewidth = 2.5) +
