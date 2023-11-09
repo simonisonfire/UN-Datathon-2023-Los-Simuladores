@@ -8,3 +8,5 @@ static/* linguist-vendored
 *.js    linguist-vendored
 *.jsx   linguist-vendored
 *.json  linguist-vendored
+*.css  linguist-vendored
+*.scss  linguist-vendored
