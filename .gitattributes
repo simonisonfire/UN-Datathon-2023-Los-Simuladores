@@ -3,4 +3,4 @@
 *.tex linguist-vendored
 *.cls linguist-vendored
 *.Rmd  linguist-detectable
-*.html linguist-detectable
+*.html linguist-vendored
