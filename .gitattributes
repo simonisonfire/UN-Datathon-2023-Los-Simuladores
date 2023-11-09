@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+*.tex linguist-vendored
+*.cls linguist-vendored
+*.Rmd  linguist-detectable
