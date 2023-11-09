@@ -4,3 +4,4 @@
 *.cls linguist-vendored
 *.Rmd  linguist-detectable
 *.html linguist-vendored
+static/* linguist-vendored
