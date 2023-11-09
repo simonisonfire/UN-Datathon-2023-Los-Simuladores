@@ -2,9 +2,8 @@
 * text=auto
 *.tex linguist-vendored
 *.cls linguist-vendored
-*.Rmd  linguist-vendored
+*.Rmd  linguist-detectable
 *.html linguist-vendored
-static/* linguist-vendored
 *.js    linguist-vendored
 *.jsx   linguist-vendored
 *.json  linguist-vendored
