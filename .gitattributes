@@ -5,6 +5,6 @@
 *.Rmd  linguist-detectable
 *.html linguist-vendored
 static/* linguist-vendored
-*.js    eol=lf
-*.jsx   eol=lf
-*.json  eol=lf
+*.js    linguist-vendored
+*.jsx   linguist-vendored
+*.json  linguist-vendored
