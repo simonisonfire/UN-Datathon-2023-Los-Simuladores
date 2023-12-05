@@ -1,8 +1,8 @@
-# UN-Datathon-2023-Los-Simuladores
+## UN-Datathon-2023-Los-Simuladores
 
 # Tramways, a viable and sustainable option for Montevideo?
 
-# Important
+### Important
 
 This project consists of four main .R files:
   - census_sim1.R ~ CRUCIAL to load this first, as it contains the base map divided by census segments (mapita_segments) that is used all throughout the project, plus some other necessary objects.
